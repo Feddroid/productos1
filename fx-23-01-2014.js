@@ -4,13 +4,15 @@ $(document).on('pageinit', '#home', function(){
         movieName = '&query='+encodeURI('Batman'),        
         key = '&api_key=470fd2ec8853e25d2f8d86f685d2270e';        
     
+    //console.log(url+mode+movieName+key);
+
     $.ajax({
         url: url + mode + key + movieName ,
         dataType: "jsonp",
         async: true,
         success: function (result) {
             ajax.parseJSONP(result);
-
+            //console.log("Da "+JSON.stringify(result));
         },
         error: function (request,error) {
             alert('Network error has occurred please try again!');
@@ -46,8 +48,13 @@ var movieInfo = {
 var ajax = {  
     parseJSONP:function(result){  
         movieInfo.result = result.results;
+        objJSON = eval("(function(){return " + movieInfo.result + ";})()");
+        console.log(objJSON.result+" dhihsid" );
+       
+       // console.log("UNO "+movieInfo.result);
+        //console.log("DOS "+JSON.stringify(movieInfo.result));
         $.each(result.results, function(i, row) {
-            console.log(JSON.stringify(row));
+          //  console.log("DOS "+JSON.stringify(row));
             $('#movie-list').append('<li><a href="" data-id="' + row.id + '"><img src="http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w185'+row.poster_path+'"/><h3>' + row.title + '</h3><p>' + row.vote_average + '/10</p></a></li>');
         });
         $('#movie-list').listview('refresh');
