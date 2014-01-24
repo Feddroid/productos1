@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Listado</title>
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.0-beta.1/jquery.mobile-1.4.0-beta.1.min.css"/>
+        <link rel="stylesheet" href="http://example.gajotres.net/iscrollview/jquery.mobile.iscrollview.css"/>
+        <link rel="stylesheet" href="http://example.gajotres.net/iscrollview/jquery.mobile.iscrollview-pull.css"/>
+
+        <link rel="stylesheet" href="estilos.css">
+
+        <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.0-beta.1/jquery.mobile-1.4.0-beta.1.min.js"></script>
+        <script src="http://example.gajotres.net/iscrollview/iscroll.js"></script>
+        <script src="http://example.gajotres.net/iscrollview/jquery.mobile.iscrollview.js"></script>
+        <script src="http://yui.yahooapis.com/3.8.0/build/yui/yui-min.js"></script>  
+        <script src="fx.js"></script>
+    </head>
+    <body>
+
+    <div data-role="page" id="home">
+        <div data-theme="a" data-role="header">
+            <h3>
+               Chocolates
+            </h3>
+        </div>        
+    <div data-role="content">
+        <div class="example-wrapper" data-iscroll>
+            <ul data-role="listview"  id="movie-list" data-theme="c">
+                
+            </ul>
+        </div>
+    </div>
+    <div data-theme="a" data-role="footer">
+        <h1>Copyright 2013</h1>
+    </div>              
+</div>
+
+<div data-role="page" id="headline">
+    <div data-theme="a" data-role="header">
+        <a href="#home" class="ui-btn-left" data-transition="slide" data-direction="reverse">Back</a>                        
+        <h3>
+            Movie Info
+        </h3>
+    </div>        
+    <div data-role="content">
+        <ul data-role="listview"  id="movie-data" data-theme="a">
+            
+        </ul>
+    </div>
+</div>    
+
+        
+    </body>
+</html>
