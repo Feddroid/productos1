@@ -10,6 +10,22 @@
     width: 100% !important;
 }
 
-.ui-li-has-thumb img{
+/*.ui-li-has-thumb img{
 	width: 60px;
+}*/
+
+#movie-data .ui-li-has-thumb{
+	text-align: center;
+}
+
+#movie-data li img{
+	max-width: 50%;	
+	max-height: 50%;
+	position: relative;
+}
+
+/*Formulario*/
+
+#email, #cantidad{
+	width: 80%;
 }

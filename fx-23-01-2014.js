@@ -48,11 +48,11 @@ var movieInfo = {
 var ajax = {  
     parseJSONP:function(result){  
         movieInfo.result = result.results;
-        objJSON = eval("(function(){return " + movieInfo.result + ";})()");
-        console.log(objJSON.result+" dhihsid" );
+        //objJSON = eval("(function(){return " + movieInfo.result + ";})()");
+        //console.log(objJSON.result+" dhihsid" );
        
        // console.log("UNO "+movieInfo.result);
-        //console.log("DOS "+JSON.stringify(movieInfo.result));
+        console.log("DOS "+JSON.stringify(movieInfo));
         $.each(result.results, function(i, row) {
           //  console.log("DOS "+JSON.stringify(row));
             $('#movie-list').append('<li><a href="" data-id="' + row.id + '"><img src="http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w185'+row.poster_path+'"/><h3>' + row.title + '</h3><p>' + row.vote_average + '/10</p></a></li>');
