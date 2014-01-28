@@ -9,8 +9,6 @@ $(document).on('pageinit', '#home', function(){
     
         var url = "http://query.yahooapis.com/v1/public/yql?q=" + 
                   encodeURIComponent(quer) + "&format=json&diagnostics=true";
-        //console.log(url);
-
     $.ajax({
         url: url ,
         crossDomain:true,
@@ -31,14 +29,27 @@ $(document).on('pagebeforeshow', '#headline', function(){
     var movieData = $('#movie-data');
         movieData.empty();
     $.each(movieInfo.result, function(i, row) {
-        if(row.id == movieInfo.id) {
-            console.log(row.poster_path+" Hola1");
-            movieData.append('<li><img src="http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w185'+row.poster_path+'"></li>');
-            movieData.append('<li>Title: '+row.original_title+'</li>');
-            movieData.append('<li>Release date'+row.release_date+'</li>');
-            movieData.append('<li>Popularity : '+row.popularity+'</li>');   
-            movieData.append('<li>Popularity : '+row.vote_average+'</li>');             
-            movieData.listview('refresh');            
+        if(row.a.id == movieInfo.id) {
+            movieData.append('<li><img src="http://lalujuria.pe/'+row.a.img.src+'"></li>');
+            movieData.append('<li>'+row.p+'</li>');
+            movieData.append('<li><a href="" data-ids="'+row.a.id+'" id="pedidos">Hacer un pedido</a></li>');      
+            movieData.listview('refresh');           
+        }
+    });    
+});
+
+$(document).on('pagebeforeshow', '#pedido', function(){  
+    var movieData = $('#movie-data-pedido');
+        movieData.empty();
+    $.each(movieInfo.result, function(i, row) {
+        if(row.a.id == movieInfo.id) {
+            //console.log("Selecciono Pedidoo "+movieInfo.id);
+            movieData.append('<li><img src="http://lalujuria.pe/'+row.a.img.src+'"></li>');
+            movieData.append('<li><input type="text" id="producto" name="producto" class="ui-body-c ui-corner-all ui-shadow-inset" value="'+row.p+'"/></li>');    
+            movieData.append('<li>Cantidad: <input type="text" id="cantidad" name="cantidad" class="ui-body-c ui-corner-all ui-shadow-inset" value=""/></li>');
+            movieData.append('<li>E-mail:   <input type="text" id="email" name="email" class="ui-body-c ui-corner-all ui-shadow-inset" value=""/></li>');   
+            movieData.append('<li><input type="submit" value="Submit"></li>');   
+            movieData.listview('refresh');           
         }
     });    
 });
@@ -46,6 +57,33 @@ $(document).on('pagebeforeshow', '#headline', function(){
 $(document).on('vclick', '#movie-list li a', function(){  
     movieInfo.id = $(this).attr('data-id');
     $.mobile.changePage( "#headline", { transition: "slide", changeHash: false });
+});
+
+$(document).on('vclick', '#pedidos', function(){  
+    movieInfo.id = $(this).attr('data-ids');
+    $.mobile.changePage( "#pedido", { transition: "slide", changeHash: false });
+});
+
+$(document).on('submit', 'form', function(){
+    var postData = $(this).serialize();
+    console.log("Bien1: "+postData);
+    $.ajax({
+                type: 'POST',
+                data: postData,
+                //change the url for your project
+                url: 'http://roinet.pe/dispositivos/pedidos/envio/db.php',
+                success: function(postData){
+                    console.log("Bien2: "+data);
+                    //alert('Your comment was successfully added');
+                },
+                error: function(postData){
+                    //console.log("Mal "+data);
+                    console.log("Mal "+JSON.stringify(postData));
+                    //alert('There was an error adding your comment');
+                }
+            });
+    
+    return false;
 });
 
 var movieInfo = {
@@ -57,15 +95,10 @@ var ajax = {
     parseJSONP:function(result){  
 
         movieInfo.result = result.query.results.div;
-        objJSON = eval("(function(){return " + JSON.stringify(movieInfo.result) + ";})()");
-        // console.log(JSON.stringify(objJSON[0]["class"])+" dhihsid" );
-        //console.log("UNOO "+movieInfo.result);
-        //console.log("DOS "+JSON.stringify(movieInfo.result));
 
       $.each(movieInfo.result, function(i, row) {
-            //console.log("DOS "+JSON.stringify(row.p)+" TRES "+JSON.stringify(row.a.img.src));
-            $('#movie-list').append('<li><a href="" data-id=""><img src="http://lalujuria.pe/'+row.a.img.src+'"/><h3>' + row.p + '</h3></a></li>');
+            $('#movie-list').append('<li><a href="" data-id="' + row.a.id + '"><img src="http://lalujuria.pe/'+row.a.img.src+'"/><h3>' + row.p + '</h3></a></li>');
       });
-        $('#movie-list').listview('refresh');
+      $('#movie-list').listview('refresh');
     }
 }
