@@ -41,7 +41,6 @@ $(document).on('pagebeforeshow', '#headline', function(){
 $(document).on('pagebeforeshow', '#pedido', function(){  
     var movieData = $('#movie-data-pedido');
         movieData.empty();
-<<<<<<< HEAD
     $.each(movieInfo.result, function(i, row) {
         if(row.a.id == movieInfo.id) {
             //console.log("Selecciono Pedidoo "+movieInfo.id);
@@ -50,32 +49,18 @@ $(document).on('pagebeforeshow', '#pedido', function(){
             movieData.append('<li>Cantidad: <input type="text" id="cantidad" name="cantidad" class="ui-body-c ui-corner-all ui-shadow-inset" value=""/></li>');
             movieData.append('<li>E-mail:   <input type="text" id="email" name="email" class="ui-body-c ui-corner-all ui-shadow-inset" value=""/></li>');   
             movieData.append('<li><input type="submit" value="Submit"></li>');   
-=======
-        //console.log("Selecciono Pedidoooo "+movieInfo.id);
-    $.each(movieInfo.result, function(i, row) {
-        if(row.a.id == movieInfo.id) {
-            console.log("Selecciono Pedidoo "+movieInfo.id);
-            movieData.append('<li><img src="http://lalujuria.pe/'+row.a.img.src+'"></li>');
-            movieData.append('<li>'+row.p+'</li>');    
-            movieData.append('<li>Cantidad: <input type="text" id="cantidad" class="ui-body-c ui-corner-all ui-shadow-inset" value=""/></li>');
-            movieData.append('<li>E-mail:   <input type="text" id="email" class="ui-body-c ui-corner-all ui-shadow-inset" value=""/></li>');   
-            movieData.append('<li><input type="submit" data-theme="c" value="Submit"></li>');   
->>>>>>> b7286828ed661b3152ffccc78288ac899b58f29c
             movieData.listview('refresh');           
         }
     });    
 });
 
 $(document).on('vclick', '#movie-list li a', function(){  
-    
     movieInfo.id = $(this).attr('data-id');
-    //console.log("Selecciono "+movieInfo.id);
     $.mobile.changePage( "#headline", { transition: "slide", changeHash: false });
 });
 
 $(document).on('vclick', '#pedidos', function(){  
     movieInfo.id = $(this).attr('data-ids');
-<<<<<<< HEAD
     $.mobile.changePage( "#pedido", { transition: "slide", changeHash: false });
 });
 
@@ -101,12 +86,6 @@ $(document).on('submit', 'form', function(){
     return false;
 });
 
-=======
-    //console.log("Selecciono Pedido "+movieInfo.id);
-    $.mobile.changePage( "#pedido", { transition: "slide", changeHash: false });
-});
-
->>>>>>> b7286828ed661b3152ffccc78288ac899b58f29c
 var movieInfo = {
     id : null,
     result : null
@@ -118,10 +97,6 @@ var ajax = {
         movieInfo.result = result.query.results.div;
 
       $.each(movieInfo.result, function(i, row) {
-<<<<<<< HEAD
-=======
-            //console.log("DOS "+JSON.stringify(row.a.id)+" TRES "+JSON.stringify(row.a.img.src));
->>>>>>> b7286828ed661b3152ffccc78288ac899b58f29c
             $('#movie-list').append('<li><a href="" data-id="' + row.a.id + '"><img src="http://lalujuria.pe/'+row.a.img.src+'"/><h3>' + row.p + '</h3></a></li>');
       });
       $('#movie-list').listview('refresh');
