@@ -90,12 +90,14 @@ $(document).on('submit', 'form', function(){
                 error: function(){
                     //console.log("Mal "+JSON.stringify(data));
                     //console.log("Mal ");
-                    alert('Hubo un error intentar nuevamente');
+                    //alert('Hubo un error intentar nuevamente');
                 }
             });
         
     }
     return false;
+
+    alert('Su pedido fue realizado con exito2. Nos comunicaremos en breve con usted');
 });
 
 var movieInfo = {
