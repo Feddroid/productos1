@@ -67,23 +67,34 @@ $(document).on('vclick', '#pedidos', function(){
 
 $(document).on('submit', 'form', function(){
     var postData = $(this).serialize();
-    console.log("Bien1: "+postData);
-    $.ajax({
+    //console.log("Bien1: "+postData);
+    var postCant = $('#cantidad').val();
+    var postEmail = $('#email').val();
+    console.log(postCant+" Bien1: "+postEmail);
+
+    if(postCant === ""){
+         alert("Por favor llenar la cantidad deseada");
+    }else if(postEmail === ""){
+         alert("Por favor proporcionar un email");
+    }else{
+         console.log("NO VACIO");
+         $.ajax({
                 type: 'POST',
                 data: postData,
                 //change the url for your project
                 url: 'http://roinet.pe/dispositivos/pedidos/envio/db.php',
-                success: function(postData){
+                success: function(data){
                     console.log("Bien2: "+data);
                     //alert('Your comment was successfully added');
                 },
-                error: function(postData){
-                    //console.log("Mal "+data);
-                    console.log("Mal "+JSON.stringify(postData));
+                error: function(){
+                    //console.log("Mal "+JSON.stringify(data));
+                    console.log("Mal ");
                     //alert('There was an error adding your comment');
                 }
             });
-    
+        
+    }
     return false;
 });
 
