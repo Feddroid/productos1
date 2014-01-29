@@ -84,13 +84,13 @@ $(document).on('submit', 'form', function(){
                 //change the url for your project
                 url: 'http://roinet.pe/dispositivos/pedidos/envio/db.php',
                 success: function(data){
-                    console.log("Bien2: "+data);
-                    //alert('Your comment was successfully added');
+                    //console.log("Bien2: "+data);
+                    alert('Su pedido fue realizado con exito. Nos comunicaremos en breve con usted');
                 },
                 error: function(){
                     //console.log("Mal "+JSON.stringify(data));
-                    console.log("Mal ");
-                    //alert('There was an error adding your comment');
+                    //console.log("Mal ");
+                    alert('Hubo un error intentar nuevamente');
                 }
             });
         
