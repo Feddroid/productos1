@@ -25,13 +25,14 @@
 }
 
 /*Formulario*/
-<<<<<<< HEAD
 #email{
 	margin-left: 19px;
 }
-=======
->>>>>>> b7286828ed661b3152ffccc78288ac899b58f29c
 
 #email, #cantidad{
 	width: 80%;
+}
+
+#producto{
+	width: 60%;
 }
