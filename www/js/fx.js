@@ -83,7 +83,7 @@ $(document).on('submit', 'form', function(){
                 data: postData,
                 //change the url for your project
                 url: 'http://roinet.pe/dispositivos/pedidos/envio/db.php',
-                success: function(data){
+                success: function(){
                     //console.log("Bien2: "+data);
                     alert('Su pedido fue realizado con exito. Nos comunicaremos en breve con usted');
                 },
