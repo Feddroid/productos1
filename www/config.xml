@@ -20,6 +20,7 @@
     <preference name="exit-on-suspend" value="false" />
     <preference name="show-splash-screen-spinner" value="true" />
     <preference name="splash-screen-duration" value="0" />
+    <preference name="SplashScreenDelay" value="0"/>
     <preference name="auto-hide-splash-screen" value="true" />
     <preference name="disable-cursor" value="false" />
     <preference name="android-minSdkVersion" value="7" />
