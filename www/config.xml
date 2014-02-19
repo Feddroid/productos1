@@ -2,7 +2,7 @@
 <widget id="com.lalujuria.lalujuriapedidos" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>La Lujuria</name>
     <description>
-        Hello World sample application that responds to the deviceready event.
+        Hello World sample application that responds to the deviceready evento.
     </description>
     <author email="support@phonegap.com" href="http://phonegap.com">
         PhoneGap Team
@@ -47,5 +47,8 @@
     <gap:splash gap:platform="ios" height="1024" src="res/screen/ios/screen-ipad-portrait.png" width="768" />
     <gap:splash gap:platform="ios" height="768" src="res/screen/ios/screen-ipad-landscape.png" width="1024" />
     <gap:splash gap:platform="winphone" src="res/screen/windows-phone/screen-portrait.jpg" />
+    <gap:config-file platform="android" parent="/manifest">
+        <application android:theme="@android:style/Theme.NoTitleBar"></application>
+    </gap:config-file>
     <access origin="*" />
 </widget>
