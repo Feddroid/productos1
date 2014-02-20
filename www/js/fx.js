@@ -1,5 +1,9 @@
-$(document).on('pageinit', '#home', function(){      
+document.addEventListener("deviceready", onDeviceReady, false);
+
+//$(document).on('pageinit', '#home', function(){      
      //navigator.notification.activityStart("Your message....", "loading");
+
+function onDeviceReady(){
 
     var quer =  "SELECT * FROM html WHERE url ='http://lalujuria.pe/productos.html'";
         quer += " and xpath='//div[@id=\"contenedor_productos\"]//ul//li//div'";
@@ -22,10 +26,15 @@ $(document).on('pageinit', '#home', function(){
 
             alert('Network error has occurred please try again!');
         }
-    });  
+    }
+    //});  
 
      //navigator.notification.activityStop();
 });
+
+    function alertCallback(){
+        
+    }
 
 $(document).on('pagebeforeshow', '#headline', function(){  
     var movieData = $('#movie-data');
@@ -77,8 +86,7 @@ $(document).on('submit', 'form', function(){
     var emailreg = /^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/;
 
     if(postCant === ""){
-         //alert("Por favor llenar la cantidad deseada");
-         navigator.notification.alert("Por favor llenar la cantidad deseada!", alertCallback, "Pedido Enviado", "OK")
+         navigator.notification.alert('Por favor llenar la cantidad deseada!', alertCallback, 'Pedido Enviado', 'OK');
     }else if(postEmail === "" || !emailreg.test($("#email").val()) ){
          alert("Por favor proporcionar un email");
     }else{
