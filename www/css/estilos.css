@@ -18,7 +18,7 @@
 	text-align: center;
 }
 
-#movie-data li img{
+#movie-data li img,  #movie-data-pedido .ui-first-child img{
 	max-width: 50%;	
 	max-height: 50%;
 	position: relative;
@@ -26,7 +26,7 @@
 
 /*Formulario*/
 #email{
-	margin-left: 19px;
+	/*margin-left: 19px;*/
 }
 
 #email, #cantidad{
@@ -35,4 +35,33 @@
 
 #producto{
 	width: 60%;
+}
+
+.ui-header .ui-title, .ui-footer .ui-title{
+	margin: 0 10%;
+}
+
+.ui-listview>li h3{
+	font-size: 0.9em;
+}
+
+.ui-listview>.ui-li-has-thumb>.ui-btn{
+	/*min-height: 0;*/
+	padding-left: 5.5em;
+}
+
+.ui-listview .ui-li-has-thumb>.ui-btn>img:first-child{
+	margin-top: 0.8rem;
+}
+
+.ui-btn, .ui-listview>li h3, .ui-listview>li>a.ui-btn, .ui-listview>.ui-li-static{
+	white-space: normal;
+}
+
+.ui-listview>.ui-li-static.ui-li-has-thumb{
+	padding-left: 0;
+}
+
+#movie-data-pedido li.ui-first-child {
+	text-align: center;
 }
