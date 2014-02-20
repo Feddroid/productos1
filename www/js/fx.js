@@ -1,33 +1,37 @@
-$(document).on('pageinit', '#home', function(){      
-     //navigator.notification.activityStart("Your message....", "loading");
+$(document).bind('deviceready', function(){
 
-    var quer =  "SELECT * FROM html WHERE url ='http://lalujuria.pe/productos.html'";
-        quer += " and xpath='//div[@id=\"contenedor_productos\"]//ul//li//div'";
-
-        //quer += " and xpath='//div[@id=\"contenedor_productos\"]//ul//li//div//a//img'";
-    //var yql_query = "select * from html where url='" + news_url + story + "'";      
-      //  yql_query += " and xpath='//div[@class=\"content\"]//div[@class=\"txt\"]/p'";    
-    
-        var url = "http://query.yahooapis.com/v1/public/yql?q=" + 
-                  encodeURIComponent(quer) + "&format=json&diagnostics=true";
-    $.ajax({
-        url: url ,
-        crossDomain:true,
-        dataType: "json",
-        async: true,
-        success: function (result) {
-            ajax.parseJSONP(result);
-        },
-        error: function (request,error) {
-
-            alert('Network error has occurred please try again!');
-        }
-    
-});  
-
-     //navigator.notification.activityStop();
+        onDeviceReady();
 });
 
+function onDeviceReady(){
+    $(document).on('pageinit', '#home', function(){      
+         //navigator.notification.activityStart("Your message....", "loading");
+
+        var quer =  "SELECT * FROM html WHERE url ='http://lalujuria.pe/productos.html'";
+            quer += " and xpath='//div[@id=\"contenedor_productos\"]//ul//li//div'";
+
+            //quer += " and xpath='//div[@id=\"contenedor_productos\"]//ul//li//div//a//img'";
+        //var yql_query = "select * from html where url='" + news_url + story + "'";      
+          //  yql_query += " and xpath='//div[@class=\"content\"]//div[@class=\"txt\"]/p'";    
+        
+            var url = "http://query.yahooapis.com/v1/public/yql?q=" + 
+                      encodeURIComponent(quer) + "&format=json&diagnostics=true";
+        $.ajax({
+            url: url ,
+            crossDomain:true,
+            dataType: "json",
+            async: true,
+            success: function (result) {
+                ajax.parseJSONP(result);
+            },
+            error: function (request,error) {
+
+                alert('Network error has occurred please try again!');
+            }
+    });  
+
+});
+}
     function alertCallback(){
 
     }
@@ -82,8 +86,11 @@ $(document).on('submit', 'form', function(){
     var emailreg = /^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/;
 
     if(postCant === ""){
-         navigator.notification.alert('Por favor llenar la cantidad deseada!', alertCallback, 'Pedido Enviado', 'OK');
-         return false;
+         navigator.notification.alert(
+            'Por favor llenar la cantidad deseada!', 
+            alertCallback,
+            'Pedido Enviado', 
+            'OK');
     }else if(postEmail === "" || !emailreg.test($("#email").val()) ){
          alert("Por favor proporcionar un email");
     }else{
