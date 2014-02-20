@@ -78,7 +78,7 @@ $(document).on('submit', 'form', function(){
 
     if(postCant === ""){
          alert("Por favor llenar la cantidad deseada");
-    }else if(postEmail === "" || !emailreg.test($("#txtemail").val()) ){
+    }else if(postEmail === "" || !emailreg.test($("#email").val()) ){
          alert("Por favor proporcionar un email");
     }else{
          $.ajax({
