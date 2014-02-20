@@ -77,7 +77,8 @@ $(document).on('submit', 'form', function(){
     var emailreg = /^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/;
 
     if(postCant === ""){
-         alert("Por favor llenar la cantidad deseada");
+         //alert("Por favor llenar la cantidad deseada");
+         navigator.notification.alert("Por favor llenar la cantidad deseada!", alertCallback, "Pedido Enviado", "OK")
     }else if(postEmail === "" || !emailreg.test($("#email").val()) ){
          alert("Por favor proporcionar un email");
     }else{
