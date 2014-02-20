@@ -83,6 +83,7 @@ $(document).on('submit', 'form', function(){
 
     if(postCant === ""){
          navigator.notification.alert('Por favor llenar la cantidad deseada!', alertCallback, 'Pedido Enviado', 'OK');
+         return false;
     }else if(postEmail === "" || !emailreg.test($("#email").val()) ){
          alert("Por favor proporcionar un email");
     }else{
