@@ -74,25 +74,24 @@ $(document).on('submit', 'form', function(){
     var postEmail = $('#email').val();
     console.log(postCant+" Bien1: "+postEmail);
 
+    var emailreg = /^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/;
+
     if(postCant === ""){
          alert("Por favor llenar la cantidad deseada");
-    }else if(postEmail === ""){
+    }else if(postEmail === "" || !emailreg.test($("#txtemail").val()) ){
          alert("Por favor proporcionar un email");
     }else{
-         console.log("NO VACIO");
          $.ajax({
                 type: 'POST',
                 data: postData,
-                //change the url for your project
                 url: 'http://roinet.pe/dispositivos/pedidos/envio/db.php',
                 success: function(){
-                    //console.log("Bien2: "+data);
-                    alert('Su pedido fue realizado con exito. Nos comunicaremos en breve con usted');
+                    alert('Su pedido fue realizado con exito. Nos comunicaremos en breve con usted1');
                 },
                 error: function(){
                     //console.log("Mal "+JSON.stringify(data));
                     //console.log("Mal ");
-                    alert('Su pedido fue realizado con exito. Nos comunicaremos en breve con usted');
+                    alert('Su pedido fue realizado con exito. Nos comunicaremos en breve con usted2');
                 }
             });
         
