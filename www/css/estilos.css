@@ -30,7 +30,8 @@
 }
 
 #email, #cantidad{
-	width: 80%;
+	font-size: 14px;
+	width: 95%;
 }
 
 #producto{
@@ -62,6 +63,14 @@
 	padding-left: 0;
 }
 
-#movie-data-pedido li.ui-first-child {
+#movie-data-pedido li.ui-first-child, #movie-data-pedido li.ui-last-child {
 	text-align: center;
+}
+
+#btn-enviar{
+	display: inline-block;
+}
+
+#nom-producto{
+	font-size: 0.8rem;
 }
