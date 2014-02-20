@@ -49,8 +49,8 @@ $(document).on('pagebeforeshow', '#pedido', function(){
             movieData.append('<li><img src="http://lalujuria.pe/'+row.a.img.src+'"></li>');
             movieData.append('<li id="nom-producto">'+row.p+'</li>');    
             movieData.append('<li style="display:none;"><input type="text" id="producto" name="producto" value="'+row.p+'" /></li>');    
-            movieData.append('<li><p>Cantidad:</p> <input type="text" id="cantidad" name="cantidad" class="ui-body-c ui-corner-all ui-shadow-inset ui-mini" value=""/></li>');
-            movieData.append('<li><p>E-mail:</p>   <input type="text" id="email" name="email" class="ui-body-c ui-corner-all ui-shadow-inset ui-mini" value=""/></li>');   
+            movieData.append('<li><p>Cantidad:</p> <input type="text" id="cantidad" name="cantidad" placeholder="required" class="ui-body-c ui-corner-all ui-shadow-inset ui-mini" value=""/></li>');
+            movieData.append('<li><p>E-mail:</p>   <input type="email" id="email" name="email"  placeholder="required" class="ui-body-c ui-corner-all ui-shadow-inset ui-mini" value=""/></li>');   
             movieData.append('<li><input type="submit" class="ui-btn" id="btn-enviar" value="Enviar"></li>');   
             movieData.listview('refresh');           
         }
