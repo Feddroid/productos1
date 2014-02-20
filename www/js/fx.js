@@ -110,11 +110,16 @@ var movieInfo = {
 var ajax = {  
     parseJSONP:function(result){  
 
-        movieInfo.result = result.query.results.div;
+      navigator.notification.activityStart("Your message....", "loading");
+
+      movieInfo.result = result.query.results.div;
 
       $.each(movieInfo.result, function(i, row) {
             $('#movie-list').append('<li><a href="" data-id="' + row.a.id + '"><img src="http://lalujuria.pe/'+row.a.img.src+'"/><h3>' + row.p + '</h3></a></li>');
       });
+
       $('#movie-list').listview('refresh');
+
+      navigator.notification.activityStop();
     }
 }
