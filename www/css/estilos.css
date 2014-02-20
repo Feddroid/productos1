@@ -1,3 +1,7 @@
+input {
+    -webkit-user-select: auto !important;
+}
+
 .ui-content {
     padding: 0 !important;
 }
