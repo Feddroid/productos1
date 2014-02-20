@@ -1,9 +1,5 @@
-document.addEventListener("deviceready", onDeviceReady, false);
-
-//$(document).on('pageinit', '#home', function(){      
+$(document).on('pageinit', '#home', function(){      
      //navigator.notification.activityStart("Your message....", "loading");
-
-function onDeviceReady(){
 
     var quer =  "SELECT * FROM html WHERE url ='http://lalujuria.pe/productos.html'";
         quer += " and xpath='//div[@id=\"contenedor_productos\"]//ul//li//div'";
@@ -26,14 +22,14 @@ function onDeviceReady(){
 
             alert('Network error has occurred please try again!');
         }
-    }
-    //});  
+    
+});  
 
      //navigator.notification.activityStop();
 });
 
     function alertCallback(){
-        
+
     }
 
 $(document).on('pagebeforeshow', '#headline', function(){  
