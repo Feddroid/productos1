@@ -1,4 +1,5 @@
 $(document).on('pageinit', '#home', function(){      
+     navigator.notification.activityStart("Your message....", "loading");
 
     var quer =  "SELECT * FROM html WHERE url ='http://lalujuria.pe/productos.html'";
         quer += " and xpath='//div[@id=\"contenedor_productos\"]//ul//li//div'";
@@ -22,7 +23,8 @@ $(document).on('pageinit', '#home', function(){
             alert('Network error has occurred please try again!');
         }
     });  
-
+    
+     navigator.notification.activityStop();
 });
 
 $(document).on('pagebeforeshow', '#headline', function(){  
