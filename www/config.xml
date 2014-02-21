@@ -24,7 +24,7 @@
     <preference name="android-minSdkVersion" value="7" />
     <preference name="android-installLocation" value="auto" />
     <feature name="Notification">
-        <param name="android-package" value="org.apache.cordova.dialogs.Notification" />
+        <param name="android-package" value="org.apache.cordova.Notification" />
     </feature>
     <plugin name="Notification" value="org.apache.cordova.Notification"/>
     <icon src="icon.png" />
