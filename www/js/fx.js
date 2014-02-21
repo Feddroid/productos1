@@ -80,8 +80,12 @@ $(document).on('submit', 'form', function(){
     var emailreg = /^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/;
 
     if(postCant === ""){
-        //document.addEventListener("deviceready", onDeviceReady, false);
-         navigator.notification.alert('Por favor llenar la cantidad deseada!');
+         navigator.notification.alert(
+                'This is Alert',  
+                onOK,  
+                'Alert', 
+                'ok'   
+        );
     }else if(postEmail === "" || !emailreg.test($("#email").val()) ){
          alert("Por favor proporcionar un email");
     }else{
