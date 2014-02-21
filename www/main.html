@@ -36,25 +36,6 @@
         <script src="js/iscroll.js"></script>
         <script src="js/jquery.mobile.iscrollview.js"></script>
        <!-- <script src="js/yui-min.js"></script>  -->
-        <script type="text/javascript" src="phonegap.js"></script>
-        <script>
-            document.addEventListener("deviceready", onDeviceReady, true);
-
-
-            function onDeviceReady() {
-
-                navigator.notification.alert('This is Alertad',  
-                alertCallback1,  
-                'Alertav', 
-                'ok'   
-                );
-            } 
-
-            function alertCallback1(){
-
-                alert("Paso11");
-            }
-        </script> 
         <script src="js/fx.js"></script>
     </head>
     <body>
@@ -112,7 +93,30 @@
         <h1>Copyright 2013</h1>
     </div>            
 </div>    
-       
+        <script type="text/javascript" src="phonegap.js"></script>
+        <script>
+            document.addEventListener("deviceready", onDeviceReady, true);
+
+            function onDeviceReady() {
+
+                navigator.notification.alert('This is Alertad',  
+                alertCallback1,  
+                'Alertav', 
+                'ok'   
+                );
+
+                //alert("NOpaso");
+            } 
+
+            function alertCallback1(){
+
+                alert("Paso11");
+            }
+
+            function vibrate() {
+                navigator.notification.vibrate(2000);
+            }
+        </script> 
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
             app.initialize();
