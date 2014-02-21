@@ -39,10 +39,21 @@
         <script type="text/javascript" src="phonegap.js"></script>
         <script>
             document.addEventListener("deviceready", onDeviceReady, true);
+
+
             function onDeviceReady() {
 
-                navigator.notification.alert("PhoneGap is working", function(){}, "", "");
+                navigator.notification.alert('This is Alertad',  
+                alertCallback1,  
+                'Alertav', 
+                'ok'   
+                );
             } 
+
+            function alertCallback1(){
+
+                alert("Paso11");
+            }
         </script> 
         <script src="js/fx.js"></script>
     </head>
