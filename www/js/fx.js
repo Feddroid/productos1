@@ -82,7 +82,7 @@ $(document).on('submit', 'form', function(){
     if(postCant === ""){
          navigator.notification.alert(
                 'This is Alert',  
-                onOK,  
+                alertCallback,  
                 'Alert', 
                 'ok'   
         );
