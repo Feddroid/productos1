@@ -45,7 +45,7 @@
         <application android:theme="@android:style/Theme.NoTitleBar"></application>
     </gap:config-file>
     <feature name="Notification">
-        <param name="android-package" value="org.apache.cordova.dialogs.Notification" />
+     <param name="wp-package" value="Notification"/>
     </feature>
     <gap:splash gap:platform="blackberry" src="res/screen/blackberry/screen-225.png" />
     <gap:splash gap:platform="ios" height="480" src="res/screen/ios/screen-iphone-portrait.png" width="320" />

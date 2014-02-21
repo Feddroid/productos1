@@ -37,6 +37,13 @@
         <script src="js/jquery.mobile.iscrollview.js"></script>
        <!-- <script src="js/yui-min.js"></script>  -->
         <script type="text/javascript" src="phonegap.js"></script>
+        <script>
+            document.addEventListener("deviceready", onDeviceReady, true);
+            function onDeviceReady() {
+
+                navigator.notification.alert("PhoneGap is working", function(){}, "", "");
+            } 
+        </script> 
         <script src="js/fx.js"></script>
     </head>
     <body>
