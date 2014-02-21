@@ -38,7 +38,7 @@
        <!-- <script src="js/yui-min.js"></script>  -->
         <script src="js/fx.js"></script>
     </head>
-    <body>
+    <body onload="showAlert();">
 
     <div data-role="page" id="home">
         <div data-theme="a" data-role="header">
@@ -98,14 +98,20 @@
             document.addEventListener("deviceready", onDeviceReady, true);
 
             function onDeviceReady() {
-
-               navigator.notification.alert('This is Alertad', alertCallback1, 'Alertav', 'ok');
-
                 //alert("NOpaso");
-                vibrate();
+                 navigator.notification.confirm(
+                        'This is confirm',  // message
+                        onConfirm,  // callback to invoke with index of button pressed
+                        'button 2',    // title
+                        'cancel', 'ok'    // buttonLabels
+                );
             } 
 
-            function alertCallback1(){
+            function showAlert(){
+                navigator.notification.alert('This is Alertad', onConfirm, 'Alertav', 'ok');
+            }
+
+            function onConfirm(){
 
                 alert("Paso11");
             }
