@@ -26,7 +26,6 @@
     <feature name="Notification">
         <param name="android-package" value="org.apache.cordova.Notification" />
     </feature>
-    <plugin name="Notification" value="org.apache.cordova.Notification"/>
     <icon src="icon.png" />
     <icon gap:density="ldpi" gap:platform="android" src="res/icon/android/icon-36-ldpi.png" />
     <icon gap:density="mdpi" gap:platform="android" src="res/icon/android/icon-48-mdpi.png" />
