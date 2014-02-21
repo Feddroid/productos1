@@ -27,7 +27,7 @@ $(document).on('pageinit', '#home', function(){
 });
 
     function alertCallback(){
-        console.log("Paso alerta!")
+      alert("Paso alerta!")
     }
 
 $(document).on('pagebeforeshow', '#headline', function(){  
