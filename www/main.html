@@ -57,7 +57,7 @@
             function showConfirm() {
                 navigator.notification.alert(
                 'You are the winner!',  // message
-                alertDismissed,         // callback
+                null,         // callback
                 'Game Over',            // title
                 'Done'                  // buttonName
                 );
@@ -73,7 +73,7 @@
             <h3>
                Carta de Chocolates
             </h3>
-            <p><a href="#" onclick="showConfirm(); return false;">Show alerta</a></p>
+            <p><a href="#" onclick="showConfirm();">Show alerta</a></p>
         </div>          
     <div data-role="content">
         <div class="example-wrapper" data-iscroll>
