@@ -45,6 +45,7 @@
             <h3>
                Carta de Chocolates
             </h3>
+            <p><a href="#" onclick="showAlert(); return false;">Show alerta</a></p>
         </div>          
     <div data-role="content">
         <div class="example-wrapper" data-iscroll>
@@ -105,7 +106,7 @@
 
             function showAlert(){
                 navigator.notification.alert('This is Alertad', onConfirm, 'Alertav', 'ok');
-                alert("ENtro alerta");
+                //alert("ENtro alerta");
             }
 
             function onConfirm(){
