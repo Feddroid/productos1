@@ -37,6 +37,33 @@
         <script src="js/jquery.mobile.iscrollview.js"></script>
        <!-- <script src="js/yui-min.js"></script>  -->
         <script src="js/fx.js"></script>
+        <script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
+        <script type="text/javascript" charset="utf-8">
+            document.addEventListener("deviceready", onDeviceReady, true);
+
+            function onDeviceReady() {
+                
+                  alert("ENtro aler1ta");
+                  vibrate();
+            } 
+
+            function onConfirm(button) {
+                alert('You selected button ' + button);
+            }
+
+            function showConfirm() {
+                navigator.notification.confirm(
+                    'You are the winner!',  // message
+                    onConfirm,              // callback to invoke with index of button pressed
+                    'Game Over',            // title
+                    'Restart,Exit'          // buttonLabels
+                );
+            }
+
+            function vibrate() {
+                navigator.notification.vibrate(2000);
+            }
+        </script> 
     </head>
     <body onload="showAlert();">
 
@@ -45,7 +72,7 @@
             <h3>
                Carta de Chocolates
             </h3>
-            <p><a href="#" onclick="showAlert(); return false;">Show alerta</a></p>
+            <p><a href="#" onclick="showConfirm(); return false;">Show alerta</a></p>
         </div>          
     <div data-role="content">
         <div class="example-wrapper" data-iscroll>
@@ -93,31 +120,7 @@
     <div data-theme="a" data-role="footer">
         <h1>Copyright 2013</h1>
     </div>            
-</div>    
-        <script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
-        <script type="text/javascript" charset="utf-8">
-            document.addEventListener("deviceready", onDeviceReady, true);
-
-            function onDeviceReady() {
-                
-                  alert("ENtro aler1ta");
-                  vibrate();
-            } 
-
-            function showAlert(){
-                navigator.notification.alert('This is Alertad', onConfirm, 'Alertav', 'ok');
-                //alert("ENtro alerta");
-            }
-
-            function onConfirm(){
-
-                alert("Paso11");
-            }
-
-            function vibrate() {
-                navigator.notification.vibrate(2000);
-            }
-        </script> 
+</div>  
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
             app.initialize();
