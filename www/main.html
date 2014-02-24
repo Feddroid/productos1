@@ -44,15 +44,19 @@
             function onDeviceReady() {
                 
                   alert("ENtro aler1ta");
-                  vibrate();
             } 
 
-            function onConfirm(button) {
-                alert('You selected button ' + button);
+            function alertDismissed() {
+                alert('You selected button ');
             }
 
             function showConfirm() {
-              alert("CONFIRMACION");
+                navigator.notification.alert(
+                'You are the winner!',  // message
+                alertDismissed,         // callback
+                'Game Over',            // title
+                'Done'                  // buttonName
+                );
             }
 
             function vibrate() {
