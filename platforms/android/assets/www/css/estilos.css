@@ -1,0 +1,80 @@
+input {
+    -webkit-user-select: auto !important;
+}
+
+.ui-content {
+    padding: 0 !important;
+}
+ 
+.ui-listview {
+    margin: 0 !important;
+}
+ 
+.example-wrapper, .example-wrapper div.iscroll-scroller {
+    width: 100% !important;
+}
+
+/*.ui-li-has-thumb img{
+	width: 60px;
+}*/
+
+#movie-data .ui-li-has-thumb{
+	text-align: center;
+}
+
+#movie-data li img,  #movie-data-pedido .ui-first-child img{
+	max-width: 50%;	
+	max-height: 50%;
+	position: relative;
+}
+
+/*Formulario*/
+#email{
+	/*margin-left: 19px;*/
+}
+
+#email, #cantidad{
+	font-size: 14px;
+	width: 95%;
+}
+
+#producto{
+	width: 60%;
+}
+
+.ui-header .ui-title, .ui-footer .ui-title{
+	margin: 0 10%;
+}
+
+.ui-listview>li h3{
+	font-size: 0.9em;
+}
+
+.ui-listview>.ui-li-has-thumb>.ui-btn{
+	/*min-height: 0;*/
+	padding-left: 5.5em;
+}
+
+.ui-listview .ui-li-has-thumb>.ui-btn>img:first-child{
+	margin-top: 0.8rem;
+}
+
+.ui-btn, .ui-listview>li h3, .ui-listview>li>a.ui-btn, .ui-listview>.ui-li-static{
+	white-space: normal;
+}
+
+.ui-listview>.ui-li-static.ui-li-has-thumb{
+	padding-left: 0;
+}
+
+#movie-data-pedido li.ui-first-child, #movie-data-pedido li.ui-last-child {
+	text-align: center;
+}
+
+#btn-enviar{
+	display: inline-block;
+}
+
+#nom-producto{
+	font-size: 0.8rem;
+}
