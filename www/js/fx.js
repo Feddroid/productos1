@@ -83,17 +83,16 @@ $(document).on('submit', 'form', function(){
         navigator.notification.alert('Por favor ingresar un email',null,'*Campo obligatorio','Ok');
     }else{
         $.ajax({
-                type: 'POST',
-                dataType: 'jsonp',
+                type: "POST",
                 data: postData,
-                url: 'http://roinet.pe/dispositivos/pedidos/envio/db.php',
+                url: "http://roinet.pe/dispositivos/pedidos/envio/db.php",
                 success: function(datos){
                     //navigator.notification.alert('Su pedido fue realizado con exito. Nos comunicaremos en breve con usted S',envioS,'Mensaje Enviado','Ok');
-                    navigator.notification.alert(datos,envioS,'Mensaje Enviado S','Ok');
+                    navigator.notification.alert(datos,envioS,"Mensaje Enviado S","Ok");
                 },
-                error: function(datos){
+                error: function(datos,error){
                     //navigator.notification.alert('Su pedido fue realizado con exito. Nos comunicaremos en breve con usted N',envioN,'Mensaje Enviado','Ok');
-                    navigator.notification.alert(datos,envioS,'Mensaje Enviado N','Ok');
+                    navigator.notification.alert(error,envioS,"Mensaje Enviado N","Ok");
                 }
         });
     }
