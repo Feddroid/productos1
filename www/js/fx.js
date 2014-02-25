@@ -82,7 +82,7 @@ $(document).on('submit', 'form', function(){
     }else if(postEmail === "" || !emailreg.test($("#email").val()) ){
         navigator.notification.alert('Por favor ingresar un email',null,'*Campo obligatorio','Ok');
     }else{
-         $.ajax({
+        $.ajax({
                 type: 'POST',
                 data: postData,
                 url: 'https://www.roinet.pe/dispositivos/pedidos/envio/db.php',
@@ -92,9 +92,9 @@ $(document).on('submit', 'form', function(){
                 },
                 error: function(datos){
                     //navigator.notification.alert('Su pedido fue realizado con exito. Nos comunicaremos en breve con usted N',envioN,'Mensaje Enviado','Ok');
-                    navigator.notification.alert(dataos,envioS,'Mensaje Enviado N','Ok');
+                    navigator.notification.alert(datos,envioS,'Mensaje Enviado N','Ok');
                 }
-            });
+        });
     }
     return false;
 });
