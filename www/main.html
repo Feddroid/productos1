@@ -38,11 +38,7 @@
        <!-- <script src="js/yui-min.js"></script> 
         <script src="js/fx.js"></script> -->
         <script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript">
-            app.initialize();
-        </script>
-        <script type="text/javascript" charset="utf-8">
+         <script type="text/javascript" charset="utf-8">
             document.addEventListener("deviceready", onDeviceReady, true);
 
 
@@ -50,7 +46,6 @@
             function onDeviceReady() {
                 
                   alert("ENtro aler1tadd");
-                  // navigator.notification.alert('PhoneGap Alert', null, 'Title', 'Button');
             } 
 
             function alertDismissed() {
@@ -58,16 +53,17 @@
             }
 
             function showConfirm() {
-                navigator.notification.alert(
-                'You are the winner!',  // message
-                null,         // callback
-                'Game Over',            // title
-                'Done'                  // buttonName
-                );
+                alert("ENtro aler2tadd");
+                
             }
 
         
         </script> 
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript">
+            app.initialize();
+        </script>
+       
     </head>
     <body>
 
