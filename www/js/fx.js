@@ -26,10 +26,6 @@ $(document).on('pageinit', '#home', function(){
     });  
 });
 
-    function alertCallback(){
-      alert("Paso alerta!")
-    }
-
 $(document).on('pagebeforeshow', '#headline', function(){  
     var movieData = $('#movie-data');
         movieData.empty();
@@ -80,33 +76,28 @@ $(document).on('submit', 'form', function(){
     var emailreg = /^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/;
 
     if(postCant === ""){
-         navigator.notification.alert(
-                'This is Alert',  
-                alertCallback,  
-                'Alert', 
-                'ok'   
-        );
+        navigator.notification.alert('Por favor ingresar una cantidad',null,'*Campo obligatorio','Ok');
     }else if(postEmail === "" || !emailreg.test($("#email").val()) ){
-         alert("Por favor proporcionar un email");
+        navigator.notification.alert('Por favor ingresar un email',null,'*Campo obligatorio','Ok');
     }else{
          $.ajax({
                 type: 'POST',
                 data: postData,
                 url: 'http://roinet.pe/dispositivos/pedidos/envio/db.php',
                 success: function(){
-                    alert('Su pedido fue realizado con exito. Nos comunicaremos en breve con usted1');
+                    //alert('Su pedido fue realizado con exito. Nos comunicaremos en breve con usted1');
+                    navigator.notification.alert('Su pedido fue realizado con exito. Nos comunicaremos en breve con usted S',null,'Mensaje Enviado','Ok');
                 },
                 error: function(){
-                    //console.log("Mal "+JSON.stringify(data));
-                    //console.log("Mal ");
-                    alert('Su pedido fue realizado con exito. Nos comunicaremos en breve con usted2');
+                    //alert('Su pedido fue realizado con exito. Nos comunicaremos en breve con usted2');
+                    navigator.notification.alert('Su pedido fue realizado con exito. Nos comunicaremos en breve con usted N',null,'Mensaje Enviado','Ok');
                 }
             });
         
     }
     return false;
 
-    alert('Su pedido fue realizado con exito2. Nos comunicaremos en breve con usted');
+    //alert('Su pedido fue realizado con exito2. Nos comunicaremos en breve con usted');
 });
 
 var movieInfo = {
