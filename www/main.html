@@ -52,9 +52,17 @@
                 alert('You selected button ');
             }
 
-            function showConfirm() {
-                alert("ENtro aler2tadd");
-                
+            function showConfirm1() {
+                alert("ENtro aler1tadd");
+            }
+
+            function showConfirm2() {
+                navigator.notification.alert(
+                'You are the winner!',  // message
+                null,         // callback
+                'Game Over',            // title
+                'Done'                  // buttonName
+                );
             }
 
         
@@ -72,7 +80,8 @@
             <h3>
                Carta de Chocolates
             </h3>
-            <p><a href="#" onclick="showConfirm();">Show alerta</a></p>
+            <p><a href="#" onclick="showConfirm1();">Show alerta1</a></p><br><br>
+            <p><a href="#" onclick="showConfirm2();">Show alerta1</a></p>
         </div>          
     <div data-role="content">
         <div class="example-wrapper" data-iscroll>
