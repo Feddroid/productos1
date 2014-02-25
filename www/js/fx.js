@@ -84,6 +84,7 @@ $(document).on('submit', 'form', function(){
     }else{
         $.ajax({
                 type: 'POST',
+                dataType: 'jsonp',
                 data: postData,
                 url: 'http://roinet.pe/dispositivos/pedidos/envio/db.php',
                 success: function(datos){
