@@ -1,6 +1,4 @@
 $(document).on('pageinit', '#home', function(){      
-     //navigator.notification.activityStart("Your message....", "loading");
-
     var quer =  "SELECT * FROM html WHERE url ='http://lalujuria.pe/productos.html'";
         quer += " and xpath='//div[@id=\"contenedor_productos\"]//ul//li//div'";
 
@@ -10,19 +8,18 @@ $(document).on('pageinit', '#home', function(){
     
         var url = "http://query.yahooapis.com/v1/public/yql?q=" + 
                   encodeURIComponent(quer) + "&format=json&diagnostics=true";
+
     $.ajax({
         url: url ,
         crossDomain:true,
-        dataType: "json",
+        dataType: "jsonp",
         async: true,
         success: function (result) {
             ajax.parseJSONP(result);
         },
         error: function (request,error) {
-
             alert('Network error has occurred please try again!');
         }
-    
     });  
 });
 
@@ -44,7 +41,6 @@ $(document).on('pagebeforeshow', '#pedido', function(){
         movieData.empty();
     $.each(movieInfo.result, function(i, row) {
         if(row.a.id == movieInfo.id) {
-            //console.log("Selecciono Pedidoo "+movieInfo.id);
             movieData.append('<li><img src="http://lalujuria.pe/'+row.a.img.src+'"></li>');
             movieData.append('<li id="nom-producto">'+row.p+'</li>');    
             movieData.append('<li style="display:none;"><input type="text" id="producto" name="producto" value="'+row.p+'" /></li>');    
@@ -66,12 +62,18 @@ $(document).on('vclick', '#pedidos', function(){
     $.mobile.changePage( "#pedido", { transition: "slide", changeHash: false });
 });
 
+function envioS() {
+    $.mobile.changePage( "#home", { transition: "slide", changeHash: false });
+}
+
+function envioN() {
+    $.mobile.changePage( "#home", { transition: "slide", changeHash: false });
+}
+
 $(document).on('submit', 'form', function(){
     var postData = $(this).serialize();
-    //console.log("Bien1: "+postData);
     var postCant = $('#cantidad').val();
     var postEmail = $('#email').val();
-    console.log(postCant+" Bien1: "+postEmail);
 
     var emailreg = /^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/;
 
@@ -82,22 +84,20 @@ $(document).on('submit', 'form', function(){
     }else{
          $.ajax({
                 type: 'POST',
+                crossDomain:true,
                 data: postData,
+                dataType : 'jsonp',
+                async: true,
                 url: 'http://roinet.pe/dispositivos/pedidos/envio/db.php',
                 success: function(){
-                    //alert('Su pedido fue realizado con exito. Nos comunicaremos en breve con usted1');
-                    navigator.notification.alert('Su pedido fue realizado con exito. Nos comunicaremos en breve con usted S',null,'Mensaje Enviado','Ok');
+                    navigator.notification.alert('Su pedido fue realizado con exito. Nos comunicaremos en breve con usted S',envioS,'Mensaje Enviado','Ok');
                 },
                 error: function(){
-                    //alert('Su pedido fue realizado con exito. Nos comunicaremos en breve con usted2');
-                    navigator.notification.alert('Su pedido fue realizado con exito. Nos comunicaremos en breve con usted N',null,'Mensaje Enviado','Ok');
+                    navigator.notification.alert('Su pedido fue realizado con exito. Nos comunicaremos en breve con usted N',envioN,'Mensaje Enviado','Ok');
                 }
             });
-        
     }
     return false;
-
-    //alert('Su pedido fue realizado con exito2. Nos comunicaremos en breve con usted');
 });
 
 var movieInfo = {
