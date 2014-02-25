@@ -84,10 +84,7 @@ $(document).on('submit', 'form', function(){
     }else{
          $.ajax({
                 type: 'POST',
-                crossDomain:true,
                 data: postData,
-                dataType : 'jsonp',
-                async: true,
                 url: 'http://roinet.pe/dispositivos/pedidos/envio/db.php',
                 success: function(){
                     navigator.notification.alert('Su pedido fue realizado con exito. Nos comunicaremos en breve con usted S',envioS,'Mensaje Enviado','Ok');
