@@ -35,6 +35,8 @@ input {
 
 #email, #cantidad{
 	font-size: 14px;
+	margin: 0.2rem;
+	padding: 0.5rem;
 	width: 95%;
 }
 
@@ -67,7 +69,7 @@ input {
 	padding-left: 0;
 }
 
-#movie-data-pedido li.ui-first-child, #movie-data-pedido li.ui-last-child {
+#movie-data-pedido li.ui-first-child, #movie-data-pedido li.ui-last-child, #texto-cajas{
 	text-align: center;
 }
 
