@@ -23,6 +23,7 @@ input {
 }
 
 #movie-data li img,  #movie-data-pedido .ui-first-child img{
+	border-radius: 1rem;
 	max-width: 50%;	
 	max-height: 50%;
 	position: relative;
@@ -44,6 +45,12 @@ input {
 	width: 60%;
 }
 
+.ui-header, .ui-footer{
+	background: #000;
+	color: #FFF;
+	text-shadow: none;
+}
+
 .ui-header .ui-title, .ui-footer .ui-title{
 	margin: 0 10%;
 }
@@ -53,11 +60,12 @@ input {
 }
 
 .ui-listview>.ui-li-has-thumb>.ui-btn{
-	/*min-height: 0;*/
-	padding-left: 5.5em;
+	padding-left: 5.7rem;
+	padding-top: 1.5rem;
 }
 
 .ui-listview .ui-li-has-thumb>.ui-btn>img:first-child{
+	border-radius: 2rem;
 	margin-top: 0.8rem;
 }
 
@@ -67,6 +75,14 @@ input {
 
 .ui-listview>.ui-li-static.ui-li-has-thumb{
 	padding-left: 0;
+}
+
+.ui-listview>.ui-li-has-thumb>.ui-btn{
+	min-height: 2.6em;
+}
+
+.ui-btn-icon-left:after, .ui-btn-icon-right:after, .ui-btn-icon-top:after, .ui-btn-icon-bottom:after, .ui-btn-icon-notext:after{
+	background-color: rgba(228, 3, 5, 0.96);
 }
 
 #movie-data-pedido li.ui-first-child, #movie-data-pedido li.ui-last-child, #texto-cajas{
