@@ -44,6 +44,13 @@ input {
 #producto{
 	width: 60%;
 }
+.ui-header{
+	top: -1px;
+} 
+
+.ui-footer{
+	bottom: -1px;
+}
 
 .ui-header, .ui-footer{
 	background: #000;
