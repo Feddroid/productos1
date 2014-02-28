@@ -97,7 +97,7 @@ input {
 }
 
 #btn-enviar{
-	background: #e40305;
+	background: #e40305;rgba(0, 0, 0, 0.96)
 	color: white;
 	display: inline-block;
 	font-weight: normal;
@@ -106,6 +106,7 @@ input {
 
 #btn-enviar:hover{
 	background: #000;
+	color: #FFF;
 }
 
 #nom-producto{
