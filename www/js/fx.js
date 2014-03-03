@@ -90,11 +90,11 @@ $(document).on('submit', 'form', function(){
                 async: true,
                 success: function(result){
                     //navigator.notification.alert('Su pedido fue realizado con exito. Nos comunicaremos en breve con usted S',envioS,'Mensaje Enviado','Ok');
-                    navigator.notification.alert(result,envioS,"Mensaje Enviado S","Ok");
+                    navigator.notification.alert("Su pedido fue realizado con exito. Nos comunicaremos en breve con usted.",envioS,"Mensaje Enviado","Ok");
                 },
                 error: function(result){
                     //navigator.notification.alert('Su pedido fue realizado con exito. Nos comunicaremos en breve con usted N',envioN,'Mensaje Enviado','Ok');
-                    navigator.notification.alert(result,envioN,"Mensaje Enviado N","Ok");
+                    navigator.notification.alert("Hubo un error. Por favor intentelo nuevamente.",envioN,"Error","Ok");
                 }    
         });
     }
