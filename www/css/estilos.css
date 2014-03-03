@@ -98,13 +98,13 @@ input {
 }
 
 #btn-enviar{
-	background: #e40305;rgba(0, 0, 0, 0.96)
+	background: #e40305;
 	border-radius: 1rem;
 	color: #FFF;
 	display: inline-block;
 	font-weight: normal;
 	text-shadow: none;
-	width: 25%;
+	width: 50%;
 }
 
 #btn-enviar:hover{
