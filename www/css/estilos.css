@@ -45,6 +45,7 @@ input {
 	width: 60%;
 }
 .ui-header{
+	margin-bottom: -2px;
 	top: -1px;
 } 
 
@@ -98,10 +99,12 @@ input {
 
 #btn-enviar{
 	background: #e40305;rgba(0, 0, 0, 0.96)
-	color: white;
+	border-radius: 1rem;
+	color: #FFF;
 	display: inline-block;
 	font-weight: normal;
 	text-shadow: none;
+	width: 25%;
 }
 
 #btn-enviar:hover{
