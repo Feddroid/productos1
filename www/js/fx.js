@@ -45,6 +45,7 @@ $(document).on('pagebeforeshow', '#pedido', function(){
             movieData.append('<li id="nom-producto">'+row.p+'</li>');    
             movieData.append('<li style="display:none;"><input type="text" id="producto" name="producto" value="'+row.p+'" /></li>');    
             movieData.append('<li id="texto-cajas"><input type="text" id="cantidad" name="cantidad" placeholder="Cantidad" class="ui-body-c ui-corner-all ui-shadow-inset ui-mini" value=""/><input type="email" id="email" name="email"  placeholder="Email" class="ui-body-c ui-corner-all ui-shadow-inset ui-mini" value=""/></li>');   
+            movieData.append('<li id="texto-cajas"><input type="text" id="cantidad" name="cantidad" placeholder="Cantidad2" class="ui-body-c ui-corner-all ui-shadow-inset ui-mini" value=""/><input type="email" id="email" name="email"  placeholder="Email" class="ui-body-c ui-corner-all ui-shadow-inset ui-mini" value=""/></li>');   
             movieData.append('<li><input type="submit" class="ui-btn" id="btn-enviar" value="Enviar"></li>');   
             movieData.listview('refresh');           
         }
