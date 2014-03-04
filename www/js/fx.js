@@ -44,7 +44,7 @@ $(document).on('pagebeforeshow', '#pedido', function(){
             movieData.append('<li><img src="http://lalujuria.pe/'+row.a.img.src+'"></li>');
             movieData.append('<li id="nom-producto">'+row.p+'</li>');    
             movieData.append('<li style="display:none;"><input type="text" id="producto" name="producto" value="'+row.p+'" /></li>');    
-            movieData.append('<li id="texto-cajas"><input type="text" id="cantidad" name="cantidad" placeholder="Cantidad" class="ui-body-c ui-corner-all ui-shadow-inset ui-mini" value=""/><input type="email" id="email" name="email"  placeholder="Email" class="ui-body-c ui-corner-all ui-shadow-inset ui-mini" value=""/></li>');   
+            movieData.append('<li id="texto-cajas"><input type="text" id="cantidad" name="cantidad" placeholder="Cantidad" class="ui-body-c ui-corner-all ui-shadow-inset ui-mini" value=""/><input type="text" id="cliente" name="cliente"  placeholder="Nombre" class="ui-body-c ui-corner-all ui-shadow-inset ui-mini" value=""/><input type="email" id="email" name="email"  placeholder="Email" class="ui-body-c ui-corner-all ui-shadow-inset ui-mini" value=""/></li>');   
             movieData.append('<li><input type="submit" class="ui-btn" id="btn-enviar" value="Enviar"></li>');   
             movieData.listview('refresh');           
         }
@@ -89,11 +89,9 @@ $(document).on('submit', 'form', function(){
                 dataType: 'text',
                 async: true,
                 success: function(result){
-                    //navigator.notification.alert('Su pedido fue realizado con exito. Nos comunicaremos en breve con usted S',envioS,'Mensaje Enviado','Ok');
                     navigator.notification.alert("Su pedido fue realizado con exito. Nos comunicaremos en breve con usted.",envioS,"Mensaje Enviado","Ok");
                 },
                 error: function(result){
-                    //navigator.notification.alert('Su pedido fue realizado con exito. Nos comunicaremos en breve con usted N',envioN,'Mensaje Enviado','Ok');
                     navigator.notification.alert("Hubo un error. Por favor intentelo nuevamente.",envioN,"Error","Ok");
                 }    
         });

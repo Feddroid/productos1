@@ -34,7 +34,7 @@ input {
 	/*margin-left: 19px;*/
 }
 
-#email, #cantidad{
+#email, #cantidad, #cliente{
 	font-size: 14px;
 	margin: 0.2rem;
 	padding: 0.4rem;
