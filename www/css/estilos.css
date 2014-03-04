@@ -50,7 +50,7 @@ input {
 } 
 
 .ui-footer{
-	bottom: -6px;
+	bottom: -5px !important;
 }
 
 .ui-header, .ui-footer{
