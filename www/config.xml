@@ -45,6 +45,7 @@
     <gap:splash gap:density="hdpi" gap:platform="android" src="res/screen/android/screen-hdpi-portrait.png" />
     <gap:splash gap:density="xhdpi" gap:platform="android" src="res/screen/android/screen-xhdpi-portrait.png" />
     <gap:config-file platform="android" parent="/manifest">
+        <application android:theme="@android:style/Theme.DeviceDefault"></application>
         <application android:theme="@android:style/Theme.NoTitleBar"></application>
     </gap:config-file>
     <gap:plugin name="org.apache.cordova.dialogs" />
