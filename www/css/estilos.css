@@ -5,6 +5,16 @@ input {
 .ui-content {
     padding: 0 !important;
 }
+
+#headline .ui-content, #pedido .ui-content{
+	position: fixed;
+	width: 100%;
+	top: 30%;
+}
+
+ #pedido .ui-content{
+ 	top: 23%;
+ }
  
 .ui-listview {
     margin: 0 !important;
