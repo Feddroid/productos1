@@ -1,10 +1,6 @@
 $(document).on('pageinit', '#home', function(){      
     var quer =  "SELECT * FROM html WHERE url ='http://lalujuria.pe/productos.html'";
         quer += " and xpath='//div[@id=\"contenedor_productos\"]//ul//li//div'";
-
-        //quer += " and xpath='//div[@id=\"contenedor_productos\"]//ul//li//div//a//img'";
-    //var yql_query = "select * from html where url='" + news_url + story + "'";      
-      //  yql_query += " and xpath='//div[@class=\"content\"]//div[@class=\"txt\"]/p'";    
     
         var url = "http://query.yahooapis.com/v1/public/yql?q=" + 
                   encodeURIComponent(quer) + "&format=json&diagnostics=true";
@@ -18,7 +14,7 @@ $(document).on('pageinit', '#home', function(){
             ajax.parseJSONP(result);
         },
         error: function (request,error) {
-            alert('Network error has occurred please try again!');
+            navigator.notification.alert("Por favor verifique su acceso a internet.",null,"Error de conexión","Ok");
         }
     });  
 });
