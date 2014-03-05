@@ -120,3 +120,35 @@ input {
 #nom-producto{
 	font-size: 0.8rem;
 }
+
+#cargando{
+	display: block;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	background: 0;
+	filter: Alpha(Opacity=18);
+	opacity: .18;
+	width: 2.875em;
+	height: 2.875em;
+	margin-left: -1.4375em;
+	margin-top: -1.4375em;
+}
+
+#cargando h1{
+	font-size: 0.6em;
+	margin-left: -5px;
+}
+
+.icono-cargando{
+	background: url("images/ajax-loader.gif");
+	background-size: 2.875em 2.875em;
+	background-color: #000;
+	display: block;
+	margin: 0;
+	width: 2.75em;
+	height: 2.75em;
+	padding: .0625em;
+	-webkit-border-radius: 2.25em;
+	border-radius: 2.25em;
+}
