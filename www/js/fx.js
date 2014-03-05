@@ -9,12 +9,15 @@ $(document).on('pageinit', '#home', function(){
         var url = "http://query.yahooapis.com/v1/public/yql?q=" + 
                   encodeURIComponent(quer) + "&format=json&diagnostics=true";
 
+    showSpinner();
+
     $.ajax({
         url: url ,
         crossDomain:true,
         dataType: "jsonp",
         async: true,
         success: function (result) {
+            hideSpinner();
             ajax.parseJSONP(result);
         },
         error: function (request,error) {
