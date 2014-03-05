@@ -128,8 +128,8 @@ input {
 	top: 50%;
 	left: 50%;
 	background: 0;
-	filter: Alpha(Opacity=18);
-	opacity: .18;
+	filter: Alpha(Opacity=50);
+	opacity: .50;
 	width: 2.875em;
 	height: 2.875em;
 	margin-left: -1.4375em;

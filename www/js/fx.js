@@ -66,11 +66,13 @@ function envioN() {
 }
 
 function showSpinner(){
-    $.mobile.loading("show");
+    //$.mobile.loading("show");
+    $('#cargando').show();
 }
 
 function hideSpinner(){
-    $.mobile.loading("hide");
+    //$.mobile.loading("hide");
+    $('#cargando').hide();
 }
 
 $(document).on('submit', 'form', function(){
