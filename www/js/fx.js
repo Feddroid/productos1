@@ -15,7 +15,9 @@ $(document).on('pageinit', '#home', function(){
         dataType: "jsonp",
         async: true,
         success: function (result) {
+            //showSpinner();
             ajax.parseJSONP(result);
+             
         },
         error: function (request,error) {
             alert('Network error has occurred please try again!');
@@ -113,16 +115,6 @@ $(document).on('submit', 'form', function(){
     return false;
 });
 
-function vacio(){
-    if( $('#home-contenido:empty').length ) {
-     //alert("Si entro");
-    }else{
-        //alert("No entro");
-        showSpinner();
-    }  
-}
-
-
 var movieInfo = {
     id : null,
     result : null
@@ -130,11 +122,13 @@ var movieInfo = {
 
 var ajax = {  
     parseJSONP:function(result){  
-        vacio();
       movieInfo.result = result.query.results.div;
       $.each(movieInfo.result, function(i, row) {
-            $('#movie-list').append('<li><a href="" data-id="' + row.a.id + '"><img src="http://lalujuria.pe/'+row.a.img.src+'"/><h3>' + row.p + '</h3></a></li>');
+        $('#movie-list').append('<li><a href="" data-id="' + row.a.id + '"><img src="http://lalujuria.pe/'+row.a.img.src+'"/><h3>' + row.p + '</h3></a></li>');
+        //hideSpinner();
       });
+
       $('#movie-list').listview('refresh');
+
     }
 }
