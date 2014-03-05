@@ -1,4 +1,10 @@
-$(document).on('pageinit', '#home', function(){      
+$(document).on('pageinit', '#home-principal', function(){    
+    //alert("Entro");  
+    //$('#cargando').hide();
+
+});
+
+$(document).on('pagebeforeshow', '#home', function(){      
     var quer =  "SELECT * FROM html WHERE url ='http://lalujuria.pe/productos.html'";
         quer += " and xpath='//div[@id=\"contenedor_productos\"]//ul//li//div'";
     
@@ -120,9 +126,14 @@ var ajax = {
     parseJSONP:function(result){  
       movieInfo.result = result.query.results.div;
       $.each(movieInfo.result, function(i, row) {
-        $('#movie-list').append('<li><a href="" data-id="' + row.a.id + '"><img src="http://lalujuria.pe/'+row.a.img.src+'"/><h3>' + row.p + '</h3></a></li>');
-        $('#cargando').hide();
+        console.log("DOS "+JSON.stringify(row.id)+" TRES "+JSON.stringify(row.a.img.src));
+
+        if (row.id === "barras") { //barras bombones cremavellanas tortas
+            $('#movie-list').append('<li><a href="" data-id="' + row.a.id + '"><img src="http://lalujuria.pe/'+row.a.img.src+'"/><h3>' + row.p + '</h3></a></li>');
+            $('#cargando').hide();
+        };
       });
+
       $('#movie-list').listview('refresh');
 
     }
