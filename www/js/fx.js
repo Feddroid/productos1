@@ -9,15 +9,12 @@ $(document).on('pageinit', '#home', function(){
         var url = "http://query.yahooapis.com/v1/public/yql?q=" + 
                   encodeURIComponent(quer) + "&format=json&diagnostics=true";
 
-    showSpinner();
-
     $.ajax({
         url: url ,
         crossDomain:true,
         dataType: "jsonp",
         async: true,
         success: function (result) {
-            hideSpinner();
             ajax.parseJSONP(result);
         },
         error: function (request,error) {
@@ -122,10 +119,15 @@ var movieInfo = {
 }
 
 var ajax = {  
+    
+           
     parseJSONP:function(result){  
       movieInfo.result = result.query.results.div;
 
+         showSpinner();
+       
       $.each(movieInfo.result, function(i, row) {
+             hideSpinner();
             $('#movie-list').append('<li><a href="" data-id="' + row.a.id + '"><img src="http://lalujuria.pe/'+row.a.img.src+'"/><h3>' + row.p + '</h3></a></li>');
       });
       $('#movie-list').listview('refresh');
