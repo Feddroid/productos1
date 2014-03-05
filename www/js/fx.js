@@ -113,21 +113,26 @@ $(document).on('submit', 'form', function(){
     return false;
 });
 
+function vacio(){
+    if( $('#home-contenido:empty').length ) {
+     //alert("Si entro");
+    }else{
+        //alert("No entro");
+        showSpinner();
+    }  
+}
+
+
 var movieInfo = {
     id : null,
     result : null
 }
 
 var ajax = {  
-    
-           
     parseJSONP:function(result){  
+        vacio();
       movieInfo.result = result.query.results.div;
-
-         showSpinner();
-       
       $.each(movieInfo.result, function(i, row) {
-             hideSpinner();
             $('#movie-list').append('<li><a href="" data-id="' + row.a.id + '"><img src="http://lalujuria.pe/'+row.a.img.src+'"/><h3>' + row.p + '</h3></a></li>');
       });
       $('#movie-list').listview('refresh');
