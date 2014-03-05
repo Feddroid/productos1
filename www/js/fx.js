@@ -72,12 +72,15 @@ function envioN() {
 $(document).on('submit', 'form', function(){
     var postData = $(this).serialize();
     var postCant = $('#cantidad').val();
+    var postCliente = $('#cliente').val();
     var postEmail = $('#email').val();
 
     var emailreg = /^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/;
 
-    if(postCant === ""){
+    if(postCant === "" || postCant === null){
         navigator.notification.alert('Por favor ingresar una cantidad',null,'*Campo obligatorio','Ok');
+    }else if(postCliente === "" || postCliente === null){
+        navigator.notification.alert('Por favor ingresar un nombre',null,'*Campo obligatorio','Ok');
     }else if(postEmail === "" || !emailreg.test($("#email").val()) ){
         navigator.notification.alert('Por favor ingresar un email',null,'*Campo obligatorio','Ok');
     }else{
