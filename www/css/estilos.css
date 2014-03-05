@@ -6,12 +6,6 @@ input {
     padding: 0 !important;
 }
 
-#headline .ui-content, #pedido .ui-content{
-	position: fixed;
-	width: 100%;
-	top: 30%;
-}
-
  #pedido .ui-content{
  	top: 23%;
  }
