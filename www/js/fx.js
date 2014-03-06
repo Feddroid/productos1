@@ -1,6 +1,6 @@
 $(document).on('pageinit', '#home-principal', function(){    
     //alert("Entro");  
-    //$('#cargando').hide();
+    $('#cargando').hide();
 
 });
 

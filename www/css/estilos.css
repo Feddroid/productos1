@@ -157,3 +157,37 @@ input {
 	-webkit-border-radius: 2.25em;
 	border-radius: 2.25em;
 }
+
+#home-principal .ui-grid-a{
+	text-align: center;
+}
+
+#home-principal .ui-responsive>.ui-block-a, #home-principal .ui-responsive>.ui-block-b{
+	width: 50%;
+	display: inline-block;
+	height: 230px;
+	vertical-align: bottom;
+}
+
+
+@media (min-width:28em){
+
+}
+
+@media (max-width: 35em){
+	#home-principal .ui-responsive>.ui-block-a, #home-principal .ui-responsive>.ui-block-b{
+		width: 49%;
+		display: inline-block;
+		height: 230px;
+		vertical-align: bottom;
+	}
+
+	#home-principal img{
+		width: 100%;
+	}
+
+	#barras, #bombones, #cremavellanas, #tortas{
+		font-size: .9em;
+		top:25%;
+	}
+}
