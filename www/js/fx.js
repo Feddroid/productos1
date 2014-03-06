@@ -1,10 +1,11 @@
-$(document).on('pageinit', '#home-principal', function(){    
-    //alert("Entro");  
+$(document).on(' pagebeforeshow pageinit', '#home-principal', function(){ 
     $('#cargando').hide();
-
 });
 
 $(document).on('pagebeforeshow', '#home', function(){      
+    var movieData = $('#movie-list');
+        movieData.empty();
+
     var quer =  "SELECT * FROM html WHERE url ='http://lalujuria.pe/productos.html'";
         quer += " and xpath='//div[@id=\"contenedor_productos\"]//ul//li//div'";
     
@@ -53,22 +54,31 @@ $(document).on('pagebeforeshow', '#pedido', function(){
     });    
 });
 
+$(document).on('vclick', '#home-principal .ui-content .ui-body', function(){  
+    movieInfo.id = $(this).attr('id');
+    console.log(movieInfo.id+" aaa1");
+    $.mobile.changePage( "#home", { transition: "slide", changeHash: false });
+});
+
 $(document).on('vclick', '#movie-list li a', function(){  
     movieInfo.id = $(this).attr('data-id');
+    movieInfo.id2 = $(this).attr('data-cat');
+    console.log(movieInfo.id+" aaa2.1"+movieInfo.id2+" aaa2.2");
     $.mobile.changePage( "#headline", { transition: "slide", changeHash: false });
 });
 
 $(document).on('vclick', '#pedidos', function(){  
     movieInfo.id = $(this).attr('data-ids');
+    console.log(movieInfo.id+" aaa3");
     $.mobile.changePage( "#pedido", { transition: "slide", changeHash: false });
 });
 
 function envioS() {
-    $.mobile.changePage( "#home", { transition: "slide", changeHash: false });
+    $.mobile.changePage( "#home-principal", { transition: "slide", changeHash: false });
 }
 
 function envioN() {
-    $.mobile.changePage( "#home", { transition: "slide", changeHash: false });
+    $.mobile.changePage( "#home-principal", { transition: "slide", changeHash: false });
 }
 
 function showSpinner(){
@@ -125,16 +135,16 @@ var movieInfo = {
 var ajax = {  
     parseJSONP:function(result){  
       movieInfo.result = result.query.results.div;
+      //console.log( movieInfo.id+" PASoAJax "+movieInfo.id2);
       $.each(movieInfo.result, function(i, row) {
-        console.log("DOS "+JSON.stringify(row.id)+" TRES "+JSON.stringify(row.a.img.src));
+        console.log("DOS "+JSON.stringify(row.id));
 
-        if (row.id === "barras") { //barras bombones cremavellanas tortas
-            $('#movie-list').append('<li><a href="" data-id="' + row.a.id + '"><img src="http://lalujuria.pe/'+row.a.img.src+'"/><h3>' + row.p + '</h3></a></li>');
+        if (row.id === movieInfo.id || row.id === movieInfo.id2) { //barras bombones cremavellanas tortas
+            $('#movie-list').append('<li><a href="" data-id="' + row.a.id + '" data-cat="'+row.id+'"><img src="http://lalujuria.pe/'+row.a.img.src+'"/><h3>' + row.p + '</h3></a></li>');
             $('#cargando').hide();
         };
       });
 
       $('#movie-list').listview('refresh');
-
     }
 }
