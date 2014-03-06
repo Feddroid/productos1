@@ -178,7 +178,7 @@ input {
 	#home-principal .ui-responsive>.ui-block-a, #home-principal .ui-responsive>.ui-block-b{
 		width: 49%;
 		display: inline-block;
-		height: 230px;
+		height: 200px;
 		vertical-align: bottom;
 	}
 
@@ -188,6 +188,6 @@ input {
 
 	#barras, #bombones, #cremavellanas, #tortas{
 		font-size: .9em;
-		top:15%;
+		top:25%;
 	}
 }
