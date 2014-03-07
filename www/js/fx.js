@@ -1,6 +1,5 @@
 $(document).on('pageinit', '#home-principal', function(){ 
     $('#cargando').hide();
-
 });
 
 $(document).on('pagebeforeshow', '#home', function(){      
@@ -12,6 +11,13 @@ $(document).on('pagebeforeshow', '#home', function(){
     
         var url = "http://query.yahooapis.com/v1/public/yql?q=" + 
                   encodeURIComponent(quer) + "&format=json&diagnostics=true";
+
+   //$('#cargando').hide();
+   /*if($('#cargando').show()){
+        alert("Aparecio");
+   }else{
+        alert("No Aparecio");
+   }*/
 
     $.ajax({
         url: url ,
