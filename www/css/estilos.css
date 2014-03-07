@@ -148,7 +148,7 @@ input {
 .icono-cargando{
 	background: url("images/ajax-loader.gif");
 	background-size: 2.875em 2.875em;
-	background-color: #000;
+	background-color: #fff;
 	display: block;
 	margin: 0;
 	width: 2.75em;
