@@ -12,7 +12,7 @@ $(document).on('pagebeforeshow', '#home', function(){
         var url = "http://query.yahooapis.com/v1/public/yql?q=" + 
                   encodeURIComponent(quer) + "&format=json&diagnostics=true";
 
-   //$('#cargando').hide();
+   $('#cargando').show();
    /*if($('#cargando').show()){
         alert("Aparecio");
    }else{
