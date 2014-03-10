@@ -169,6 +169,13 @@ input {
 	vertical-align: bottom;
 }
 
+#plus, #minus{
+	display: inline-block;
+}
+
+#cantidad{
+	width: 50%;
+}
 
 @media (min-width:28em){
 
