@@ -74,7 +74,7 @@ $(document).on('pagebeforeshow', '#pedido', function(){
             movieData.append('<li><img src="http://lalujuria.pe/'+row.a.img.src+'"></li>');
             movieData.append('<li id="nom-producto">'+row.p+'</li>');    
             movieData.append('<li style="display:none;"><input type="text" id="producto" name="producto" value="'+row.p+'" /></li>');    
-            movieData.append('<li id="texto-cajas"><div data-role="controlgroup" data-mini="true"><input type="button" class="ui-btn" id="plus" value="+"/><input type="number" id="cantidad" name="cantidad" value="1" min="1" max="200" /><input type="button" class="ui-btn" id="minus" value="-"/></div><input type="text" id="cliente" name="cliente" placeholder="Nombre" class="ui-body-c ui-corner-all ui-shadow-inset ui-mini" value=""/><input type="email" id="email" name="email"  placeholder="Email" class="ui-body-c ui-corner-all ui-shadow-inset ui-mini" value=""/></li>');   
+            movieData.append('<li id="texto-cajas"><div data-role="controlgroup" data-mini="true"><input type="button" class="ui-btn" id="plus" value="+"/><input type="number" id="cantidad" name="cantidad" disabled="disabled" value="1" min="1" max="200" /><input type="button" class="ui-btn" id="minus" value="-"/></div><input type="text" id="cliente" name="cliente" placeholder="Nombre" class="ui-body-c ui-corner-all ui-shadow-inset ui-mini" value=""/><input type="email" id="email" name="email"  placeholder="Email" class="ui-body-c ui-corner-all ui-shadow-inset ui-mini" value=""/></li>');   
             movieData.append('<li><input type="submit" class="ui-btn" id="btn-enviar" value="Enviar"></li>');   
             movieData.listview('refresh');           
         }
