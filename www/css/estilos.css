@@ -188,10 +188,6 @@ input {
 	width: 100%;
 }
 
-input::-webkit-inner-spin-button{
-	display: none;
-}
-
 @media (min-width:28em){
 
 }
