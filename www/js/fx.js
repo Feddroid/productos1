@@ -13,7 +13,7 @@ $(document).on('pagebeforeshow', '#home', function(){
                   encodeURIComponent(quer) + "&format=json&diagnostics=true";
 
    $('#cargando').show();
-   
+
     $.ajax({
         url: url ,
         crossDomain:true,
@@ -69,7 +69,7 @@ $(document).on('pagebeforeshow', '#pedido', function(){
             movieData.append('<li><img src="http://lalujuria.pe/'+row.a.img.src+'"></li>');
             movieData.append('<li id="nom-producto">'+row.p+'</li>');    
             movieData.append('<li style="display:none;"><input type="text" id="producto" name="producto" value="'+row.p+'" /></li>');    
-            movieData.append('<li id="texto-cajas"><label id="cantidad-label">Cantidad:</label><div data-role="controlgroup" data-mini="true"><input type="button" class="ui-btn" id="plus" value="+"/><input type="number" id="cantidad" name="cantidad" value="1" min="1" max="200" readonly /><input type="button" class="ui-btn" id="minus" value="-"/></div><input type="text" id="cliente" name="cliente" placeholder="Nombre" class="ui-body-c ui-corner-all ui-shadow-inset ui-mini" value=""/><input type="email" id="email" name="email"  placeholder="Email" class="ui-body-c ui-corner-all ui-shadow-inset ui-mini" value=""/></li>');   
+            movieData.append('<li id="texto-cajas"><label id="cantidad-label">Cantidad:</label><div data-role="controlgroup" data-mini="true"><input type="button" class="ui-btn" id="plus" value="+"/><input type="text" id="cantidad" name="cantidad" value="1" min="1" max="200" readonly /><input type="button" class="ui-btn" id="minus" value="-"/></div><input type="text" id="cliente" name="cliente" placeholder="Nombre" class="ui-body-c ui-corner-all ui-shadow-inset ui-mini" value=""/><input type="email" id="email" name="email"  placeholder="Email" class="ui-body-c ui-corner-all ui-shadow-inset ui-mini" value=""/></li>');   
             movieData.append('<li><input type="submit" class="ui-btn" id="btn-enviar" value="Enviar"></li>');   
             movieData.listview('refresh');           
         }
@@ -141,7 +141,7 @@ $(document).on('submit', 'form', function(){
                 success: function(result){
                     navigator.notification.alert("Su pedido fue realizado con exito. Nos comunicaremos en breve con usted.",envioS,"Mensaje Enviado","Ok");
                     //envioS();
-                    //console.log("Esto es"+postData);
+                    console.log("Esto es"+postData);
                     hideSpinner();
                 },
                 error: function(result){
