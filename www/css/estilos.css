@@ -63,6 +63,7 @@ input {
 	border: 0;
 	color: #FFF;
 	text-shadow: none;
+	z-index: 1;
 }
 
 .ui-header .ui-title, .ui-footer .ui-title{
@@ -137,19 +138,21 @@ input {
 #cargando{
 	display: block;
 	position: fixed;
-	top: 50%;
-	left: 50%;
-	background: 0;
+	background: #fff;
 	filter: Alpha(Opacity=50);
 	opacity: .50;
-	width: 2.875em;
-	height: 2.875em;
+	width: 100%; /*2.875em*/
+	height: 100%; /*2.875em*/
+	text-align: center;
+	z-index: 2;
+	/*top: 50%;
+	left: 50%;
 	margin-left: -1.4375em;
-	margin-top: -1.4375em;
+	margin-top: -1.4375em;*/
 }
 
 #cargando h1{
-	color: #fff;
+	color: #000;
 	font-size: 0.6em;
 	margin-left: -5px;
 }
@@ -158,11 +161,12 @@ input {
 	background: url("images/ajax-loader.gif");
 	background-size: 2.875em 2.875em;
 	background-color: #fff;
-	display: block;
+	display: inline-block;
 	margin: 0;
 	width: 2.75em;
 	height: 2.75em;
 	padding: .0625em;
+	margin-top: 76%;
 	-webkit-border-radius: 2.25em;
 	border-radius: 2.25em;
 }
