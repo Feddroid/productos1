@@ -23,6 +23,7 @@ input {
 }*/
 
 #movie-data .ui-li-has-thumb{
+	border: 0;
 	text-align: center;
 }
 
@@ -42,7 +43,7 @@ input {
 	font-size: 14px;
 	margin: 0.2rem;
 	padding: 0.4rem;
-	width: 95%;
+	width: 92%;
 }
 
 #producto{
@@ -59,6 +60,7 @@ input {
 
 .ui-header, .ui-footer{
 	background: #000;
+	border: 0;
 	color: #FFF;
 	text-shadow: none;
 }
@@ -101,8 +103,14 @@ input {
 	text-align: center;
 }
 
+#movie-data-pedido li.ui-first-child{
+	border: 0;
+	padding-right: 0;
+}
+
 #btn-enviar{
 	background: #e40305;
+	border: 0;
 	border-radius: 1rem;
 	color: #FFF;
 	display: inline-block;
@@ -141,6 +149,7 @@ input {
 }
 
 #cargando h1{
+	color: #fff;
 	font-size: 0.6em;
 	margin-left: -5px;
 }
@@ -174,6 +183,11 @@ input {
 }
 
 #cantidad{
+	background: rgba(255, 255, 255, 0);
+	border: 0;
+	color: #FFF;
+	font-weight: bold;
+	font-size: 20px;
 	margin: 0 1em;
 	text-align: center;
 	width: 50%;
@@ -186,6 +200,24 @@ input {
 	margin: 0;
 	text-transform: none;
 	width: 100%;
+}
+
+body, .ui-overlay-a, .ui-page-theme-a, #movie-list li a, #movie-data li, #movie-data-pedido li{
+	background: #4c292b;
+}
+
+.ui-listview>li h3, #barras, #bombones, #cremavellanas, #tortas, #movie-data li, #nom-producto, #cantidad-label{
+	color: #FFF;
+	font-weight: normal;
+	text-shadow: none;
+}
+
+.ui-listview>li.ui-first-child>a.ui-btn{
+	border: 0;
+}
+
+.ui-listview>li.ui-last-child>a.ui-btn, #movie-data-pedido li.ui-last-child{
+	border-bottom: 0;
 }
 
 input::-webkit-inner-spin-button{
@@ -205,7 +237,9 @@ input::-webkit-inner-spin-button{
 	}
 
 	#home-principal img{
-		width: 100%;
+		border: 1px solid #EAEAEA;
+		padding: 2px;
+		width: 95%;
 	}
 
 	#barras, #bombones, #cremavellanas, #tortas{
