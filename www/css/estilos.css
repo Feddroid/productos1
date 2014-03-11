@@ -179,6 +179,19 @@ input {
 	width: 50%;
 }
 
+#cantidad-label{
+	color: #A9A9A9;
+	display: inline-block;
+	font-size: 14px;
+	margin: 0;
+	text-transform: none;
+	width: 100%;
+}
+
+input::-webkit-inner-spin-button{
+	display: none;
+}
+
 @media (min-width:28em){
 
 }
