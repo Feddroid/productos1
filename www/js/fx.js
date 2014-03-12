@@ -35,7 +35,7 @@ $(document).on('pagebeforeshow', '#headline', function(){
         if(row.a.id == movieInfo.id) {
             movieData.append('<li><img src="http://lalujuria.pe/'+row.a.img.src+'"></li>');
             movieData.append('<li>'+row.p+'</li>');
-            movieData.append('<li><a href="" data-ids="'+row.a.id+'" id="pedidos">Hacer un pedido</a></li>');      
+            movieData.append('<li><a href="" data-ids="'+row.a.id+'" data-cat="'+row.id+'" id="pedidos">Hacer un pedido</a></li>');      
             movieData.listview('refresh');           
         }
     });    
@@ -65,11 +65,23 @@ $(document).on('pagebeforeshow', '#pedido', function(){
     var movieData = $('#movie-data-pedido');
         movieData.empty();
     $.each(movieInfo.result, function(i, row) {
+        var rowID = row.id;
+        //barras bombones cremavellanas tortas
+        if (rowID === "barras"){
+            rowID = "barra(s)";
+        }else if (rowID === "bombones"){
+            rowID = "caja(s)";
+        }else if (rowID === "cremavellanas"){
+            rowID = "frasco(s)";
+        }else{
+            rowID = "torta(s)";
+        }
+
         if(row.a.id == movieInfo.id) {
             movieData.append('<li><img src="http://lalujuria.pe/'+row.a.img.src+'"></li>');
             movieData.append('<li id="nom-producto">'+row.p+'</li>');    
-            movieData.append('<li style="display:none;"><input type="text" id="producto" name="producto" value="'+row.p+'" /></li>');    
-            movieData.append('<li id="texto-cajas"><label id="cantidad-label">Cantidad:</label><div data-role="controlgroup" data-mini="true"><input type="button" class="ui-btn" id="plus" value="+"/><input type="text" id="cantidad" name="cantidad" value="1" min="1" max="200" readonly /><input type="button" class="ui-btn" id="minus" value="-"/></div><input type="text" id="cliente" name="cliente" placeholder="Nombre" class="ui-body-c ui-corner-all ui-shadow-inset ui-mini" value=""/><input type="email" id="email" name="email"  placeholder="Email" class="ui-body-c ui-corner-all ui-shadow-inset ui-mini" value=""/></li>');   
+            movieData.append('<li style="display:none;"><input type="text" id="producto" name="producto" value="'+row.p+'" /> <input type="text" id="presentacion" name="presentacion" value="'+rowID+'" /></li>');    
+            movieData.append('<li id="texto-cajas"><label id="cantidad-label">Cantidad de '+rowID+':</label><div data-role="controlgroup" data-mini="true"><input type="button" class="ui-btn" id="plus" value="+"/><input type="text" id="cantidad" name="cantidad" value="1" min="1" max="200" readonly /><input type="button" class="ui-btn" id="minus" value="-"/></div><input type="text" id="cliente" name="cliente" placeholder="Nombre" class="ui-body-c ui-corner-all ui-shadow-inset ui-mini" value=""/><input type="email" id="email" name="email"  placeholder="Email" class="ui-body-c ui-corner-all ui-shadow-inset ui-mini" value=""/></li>');   
             movieData.append('<li><input type="submit" class="ui-btn" id="btn-enviar" value="Enviar"></li>');   
             movieData.listview('refresh');           
         }
@@ -92,7 +104,9 @@ $(document).on('vclick', '#movie-list li a', function(){
 
 $(document).on('vclick', '#pedidos', function(){  
     movieInfo.id = $(this).attr('data-ids');
-    console.log(movieInfo.id+" aaa3");
+    movieInfo.id2 = $(this).attr('data-cat');
+    console.log(movieInfo.id+" aaa3.1 "+movieInfo.id2+" aaa3.2");
+    //console.log(movieInfo.id+" aaa3");
     $.mobile.changePage( "#pedido", { transition: "slide", changeHash: false });
 });
 
@@ -139,8 +153,8 @@ $(document).on('submit', 'form', function(){
                 dataType: 'text',
                 async: true,
                 success: function(result){
-                    navigator.notification.alert("Su pedido fue realizado con exito. Nos comunicaremos en breve con usted.",envioS,"Mensaje Enviado","Ok");
-                    //envioS();
+                    //navigator.notification.alert("Su pedido fue realizado con exito. Nos comunicaremos en breve con usted.",envioS,"Mensaje Enviado","Ok");
+                    envioS();
                     console.log("Esto es"+postData);
                     hideSpinner();
                 },
