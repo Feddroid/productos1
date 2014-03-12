@@ -19,10 +19,16 @@
         <script src="js/fx.js"></script>
         <script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
         <script type="text/javascript">
-            document.addEventListener("deviceready", onDeviceReady, true);
+            document.addEventListener("deviceready", onDeviceReady, false);
 
             function onDeviceReady() {
-                  console.log("Phonegap cargo");
+                document.addEventListener("backbutton", onBackKeyDown, false);
+            }
+
+            // Handle the back button
+            function onBackKeyDown() {
+                 alert("Atroox");
+                     //Your backbutton code
             }
         </script> 
         <script type="text/javascript" src="js/index.js"></script>
