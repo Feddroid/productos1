@@ -144,6 +144,8 @@ input {
 	width: 100%; /*2.875em*/
 	height: 100%; /*2.875em*/
 	text-align: center;
+	top: 0;
+	left: 0;
 	z-index: 2;
 	/*top: 50%;
 	left: 50%;
