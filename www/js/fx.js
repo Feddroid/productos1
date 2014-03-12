@@ -153,8 +153,8 @@ $(document).on('submit', 'form', function(){
                 dataType: 'text',
                 async: true,
                 success: function(result){
-                    //navigator.notification.alert("Su pedido fue realizado con exito. Nos comunicaremos en breve con usted.",envioS,"Mensaje Enviado","Ok");
-                    envioS();
+                    navigator.notification.alert("Su pedido fue realizado con exito. Nos comunicaremos en breve con usted.",envioS,"Mensaje Enviado","Ok");
+                    //envioS();
                     console.log("Esto es"+postData);
                     hideSpinner();
                 },
