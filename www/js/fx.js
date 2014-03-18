@@ -115,7 +115,7 @@ $(document).on('vclick', '#pedidos', function(){
 
 function envioS() {
     $.mobile.changePage( "#home-principal", { transition: "slide", changeHash: false });
-    alert("PaSO");
+    hideSpinner();
 }
 
 function envioN() {
