@@ -26,7 +26,7 @@ $(document).on('pagebeforeshow', '#home', function(){
         },
         error: function (request,error) {
             //alert("NO");
-            navigator.notification.alert("Por favor verifique su acceso a internet.",null,"Error de conexión","Ok");
+            navigator.notification.alert("Por favor verifique su acceso a internet.",envioS,"Error de conexión","Ok");
         }
     });  
 });
@@ -115,10 +115,11 @@ $(document).on('vclick', '#pedidos', function(){
 
 function envioS() {
     $.mobile.changePage( "#home-principal", { transition: "slide", changeHash: false });
+    alert("PaSO");
 }
 
 function envioN() {
-    $.mobile.changePage( "#home-principal", { transition: "slide", changeHash: false });
+    //$.mobile.changePage( "#home-principal", { transition: "slide", changeHash: false });
 }
 
 function showSpinner(){
