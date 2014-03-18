@@ -15,14 +15,17 @@ $(document).on('pagebeforeshow', '#home', function(){
    $('#cargando').show();
 
     $.ajax({
-        url: url ,
+        url: url,
         crossDomain:true,
         dataType: "jsonp",
         async: true,
+        timeout: 5000,
         success: function (result) {
+            alert("SI");
             ajax.parseJSONP(result);
         },
         error: function (request,error) {
+            alert("NO");
             navigator.notification.alert("Por favor verifique su acceso a internet.",null,"Error de conexión","Ok");
         }
     });  
