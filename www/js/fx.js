@@ -21,11 +21,11 @@ $(document).on('pagebeforeshow', '#home', function(){
         async: true,
         timeout: 5000,
         success: function (result) {
-            alert("SI");
+           // alert("SI");
             ajax.parseJSONP(result);
         },
         error: function (request,error) {
-            alert("NO");
+            //alert("NO");
             navigator.notification.alert("Por favor verifique su acceso a internet.",null,"Error de conexión","Ok");
         }
     });  
