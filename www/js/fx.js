@@ -26,7 +26,7 @@ $(document).on('pagebeforeshow', '#home', function(){
         },
         error: function (request,error) {
             //alert("NO");
-            navigator.notification.alert("Por favor verifique su acceso a internet.",envioS,"Error de conexión","Ok");
+            navigator.notification.alert("Por favor verifique su acceso a internet. Intente nuevamente.",envioS,"Error de conexión","Ok");
         }
     });  
 });

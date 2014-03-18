@@ -178,10 +178,34 @@ input {
 }
 
 #home-principal .ui-responsive>.ui-block-a, #home-principal .ui-responsive>.ui-block-b{
-	width: 50%;
+	border-bottom: 1px solid #FFF;
+	width: 100%;
 	display: inline-block;
-	height: 230px;
+	line-height: 0;
+	/*height: 230px;*/
 	vertical-align: bottom;
+}
+
+#home-principal .ui-responsive>.ui-block-a:hover, #home-principal .ui-responsive>.ui-block-b:hover{
+	background-color: rgba(255, 255, 255, 0.22);
+}
+
+#home-principal{
+	background: rgba(255, 255, 255, 0.18); 
+	border-radius: 1rem;
+	margin: 0 5%;
+	width: 90%;
+}
+
+#home-principal .ui-header{
+	border-top-left-radius: 1rem;
+	border-top-right-radius: 1rem;
+}
+
+#home-principal .ui-footer{		
+	bottom: 0 !important;
+	position: absolute;
+	width: 100%;
 }
 
 #plus, #minus{
@@ -226,6 +250,22 @@ body, .ui-overlay-a, .ui-page-theme-a, #movie-list li a, #movie-data li, #movie-
 	border-bottom: 0;
 }
 
+.list_top {
+	font-weight: bold;
+	position: absolute;
+	bottom: 15px;
+	left: 20px;
+}
+
+#barras, #bombones, #cremavellanas, #tortas{
+		display: inline-block;
+		font-size: .9em;
+		line-height: 0;
+		padding: 0;
+		width: 258px;
+		/*top:25%;*/
+}
+
 input::-webkit-inner-spin-button{
 	display: none;
 }
@@ -235,14 +275,14 @@ input::-webkit-inner-spin-button{
 }
 
 @media (max-width: 35em){
-	#home-principal .ui-responsive>.ui-block-a, #home-principal .ui-responsive>.ui-block-b{
+	/*#home-principal .ui-responsive>.ui-block-a, #home-principal .ui-responsive>.ui-block-b{
 		width: 49%;
 		display: inline-block;
 		height: 200px;
 		vertical-align: bottom;
-	}
+	}*/
 
-	#home-principal img{
+	/*#home-principal img{
 		border: 1px solid #EAEAEA;
 		padding: 2px;
 		width: 95%;
@@ -250,6 +290,8 @@ input::-webkit-inner-spin-button{
 
 	#barras, #bombones, #cremavellanas, #tortas{
 		font-size: .9em;
+		line-height: 0;
+		padding: 0;
 		top:25%;
-	}
+	}*/
 }
