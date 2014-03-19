@@ -47,7 +47,10 @@
 
         <div data-role="content">
             <!--<div class="example-wrapper" data-iscroll> -->
-                <ul data-role="listview"  id="movie-data-principal" data-theme="a" >
+            <form class="ui-filterable">
+                <input id="filter-input-1" data-type="search">
+            </form>
+                <ul data-role="listview" data-filter="true" data-input="#filter-input-1" id="movie-data-principal" data-theme="a" >
                     <li>
                         <div class="ui-body ui-body-d" id="barras">
                             <img src="img/barras.jpg" alt="barras" />
@@ -77,7 +80,7 @@
 
     <div data-role="page" id="home">
         <div data-theme="a" data-role="header">
-            <a href="#home-principal" class="ui-btn-left" data-transition="slide" data-direction="reverse">Atrás</a>
+            <a href="#home-principal" class="ui-btn-left ui-mini" data-transition="slide" data-direction="reverse">Atrás</a>
             <h3>
                Seleccione
             </h3>
