@@ -59,7 +59,7 @@ input {
 }
 
 .ui-header, .ui-footer{
-	background: #000;
+	background: #811111;
 	border: 0;
 	color: #FFF;
 	text-shadow: none;
@@ -186,23 +186,19 @@ input {
 	vertical-align: bottom;
 }
 
-#home-principal .ui-responsive>.ui-block-a:hover, #home-principal .ui-responsive>.ui-block-b:hover{
-	background-color: rgba(255, 255, 255, 0.22);
-}
-
 #home-principal{
 	background: rgba(255, 255, 255, 0.18); 
 	border-radius: 1rem;
-	margin: 0 5%;
-	width: 90%;
+	margin: 0 2.5%;
+	width: 95%;
 }
 
 #home-principal .ui-header{
-	border-top-left-radius: 1rem;
-	border-top-right-radius: 1rem;
+	border-radius: 1rem 1rem 0 0;
 }
 
-#home-principal .ui-footer{		
+#home-principal .ui-footer{	
+	border-radius: 0 0 1rem 1rem;	
 	bottom: 0 !important;
 	position: absolute;
 	width: 100%;
@@ -236,6 +232,15 @@ body, .ui-overlay-a, .ui-page-theme-a, #movie-list li a, #movie-data li, #movie-
 	background: #4c292b;
 }
 
+.ui-mobile, .ui-mobile body{
+	height: 100%;
+}
+
+/*body, .ui-overlay-a{
+	background: url('../img/bg.jpg');
+	background-size: 100% 100%;
+}*/
+
 .ui-listview>li h3, #barras, #bombones, #cremavellanas, #tortas, #movie-data li, #nom-producto, #cantidad-label{
 	color: #FFF;
 	font-weight: normal;
@@ -252,9 +257,10 @@ body, .ui-overlay-a, .ui-page-theme-a, #movie-list li a, #movie-data li, #movie-
 
 .list_top {
 	font-weight: bold;
-	position: absolute;
-	bottom: 15px;
-	left: 20px;
+	position: relative;
+	background: rgba(76, 41, 43, 0.68);
+	line-height: normal;
+	margin-top: -15px;
 }
 
 #barras, #bombones, #cremavellanas, #tortas{
@@ -262,8 +268,30 @@ body, .ui-overlay-a, .ui-page-theme-a, #movie-list li a, #movie-data li, #movie-
 		font-size: .9em;
 		line-height: 0;
 		padding: 0;
+		text-align: center;
 		width: 258px;
-		/*top:25%;*/
+}
+
+#movie-data-principal{
+	text-align: center;
+}
+
+#movie-data-principal li{
+	background: none;
+	line-height: 0;
+	text-align: center;
+}
+
+#movie-data-principal li:hover{
+	background-color: rgba(255, 255, 255, 0.22);
+}
+
+#movie-data-principal .ui-first-child{
+	border:0;
+}
+
+#movie-data-principal .ui-last-child{
+	border-bottom-width: 0;
 }
 
 input::-webkit-inner-spin-button{
