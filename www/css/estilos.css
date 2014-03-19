@@ -200,7 +200,7 @@ input {
 #home-principal .ui-footer{	
 	border-radius: 0 0 1rem 1rem;	
 	bottom: 0 !important;
-	position: absolute;
+	/*position: absolute;*/
 	width: 100%;
 }
 
@@ -280,6 +280,7 @@ body, .ui-overlay-a, .ui-page-theme-a, #movie-list li a, #movie-data li, #movie-
 	background: none;
 	line-height: 0;
 	text-align: center;
+	padding: 0;
 }
 
 #movie-data-principal li:hover{
