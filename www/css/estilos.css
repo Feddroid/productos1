@@ -45,6 +45,15 @@ input {
 	width: 60%;
 }
 
+.ui-header{
+	top: 0;
+	left: 0;
+}
+
+.ui-footer{
+	left: 0;
+}
+
 .ui-header, .ui-footer{
 	background: #811111;
 	border: 0;
@@ -53,10 +62,6 @@ input {
 	width: 100%;
 	text-shadow: none;
 	z-index: 1;
-}
-
-.ui-header .ui-title, .ui-footer .ui-title{
-	margin: 0;
 }
 
 .ui-listview>li h3{
