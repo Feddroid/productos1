@@ -46,11 +46,12 @@ input {
 }
 
 .ui-header{
-	top: 0;
+	top: -1px;
 	left: 0;
 }
 
 .ui-footer{
+	bottom: -1px;
 	left: 0;
 }
 
