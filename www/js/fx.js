@@ -37,7 +37,7 @@ $(document).on('pagebeforeshow', '#headline', function(){
     $.each(movieInfo.result, function(i, row) {
         if(row.a.id == movieInfo.id) {
             movieData.append('<li><img src="http://lalujuria.pe/'+row.a.img.src+'"></li>');
-            movieData.append('<li>'+row.p+'</li>');
+            movieData.append('<li id="nom-producto-info">'+row.p+'</li>');
             movieData.append('<li><a href="" data-ids="'+row.a.id+'" data-cat="'+row.id+'" id="pedidos">Hacer un pedido</a></li>');      
             movieData.listview('refresh');           
         }

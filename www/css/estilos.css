@@ -103,12 +103,13 @@ input {
 #btn-enviar{
 	background: #e40305;
 	border: 0;
-	border-radius: 1rem;
 	color: #FFF;
 	display: inline-block;
+	font-size: 0.9rem;
 	font-weight: normal;
 	margin: 0;
 	text-shadow: none;
+	text-transform: uppercase;
 	width: 50%;
 }
 
@@ -123,8 +124,11 @@ input {
 	width: 100%;
 }
 
-#nom-producto{
+#nom-producto, #nom-producto-info{
 	font-size: 0.8rem;
+	margin-top: -34px;
+	background: rgba(76, 41, 43, 0.5) !important;
+	border-top: 0;
 }
 
 #cargando{
@@ -180,10 +184,6 @@ input {
 	width: 99%;
 }
 
-.ui-header, .ui-footer{
-	
-}
-
 .ui-footer{	
 	bottom: 0 !important;
 }
@@ -237,7 +237,7 @@ body, .ui-overlay-a, .ui-page-theme-a, #movie-data li, #movie-data-pedido li{
 .list_top {
 	font-weight: bold;
 	position: relative;
-	background: rgba(76, 41, 43, 0.68);
+	background: rgba(76, 41, 43, 0.69);
 	line-height: normal;
 	margin-top: -15px;
 }
