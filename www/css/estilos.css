@@ -275,6 +275,23 @@ body, .ui-overlay-a, .ui-page-theme-a, #movie-data li, #movie-data-pedido li{
 	border-bottom-width: 0;
 }
 
+.ui-page-theme-a .ui-btn.ui-btn-active, html .ui-bar-a .ui-btn.ui-btn-active{
+	background-color: rgba(0, 0, 0, 0.7);
+	border-color: rgba(0, 0, 0, 0);
+	color: #FFF;
+	text-shadow: 0 0 0 rgba(0, 0, 0, 0);
+}
+
+#btn-cajas{
+	border: 0;
+	padding-bottom: 0;
+	padding-top: 0;
+}
+
+#pedido .ui-content{
+	padding-bottom: 15px !important;
+}
+
 input::-webkit-inner-spin-button{
 	display: none;
 }
