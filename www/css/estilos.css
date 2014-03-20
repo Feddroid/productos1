@@ -174,14 +174,12 @@ input {
 	width: 100%;
 	display: inline-block;
 	line-height: 0;
-	/*height: 230px;*/
 	vertical-align: bottom;
 }
 
-#home-principal, #home{
+#home-principal, #home, #headline, #pedido{
 	background: rgba(255, 255, 255, 0.18);
-	margin: 0 0.5%;
-	width: 99%;
+	width:100%;
 }
 
 .ui-footer{	
@@ -261,7 +259,7 @@ body, .ui-overlay-a, .ui-page-theme-a, #movie-data li, #movie-data-pedido li{
 	padding: 0;
 }
 
-#movie-data-principal li, #movie-list li a{
+#movie-data-principal li, #movie-list li a, #movie-data-pedido li{
 	background: none;
 }
 
