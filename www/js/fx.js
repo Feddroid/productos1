@@ -183,7 +183,7 @@ var ajax = {
       $.each(movieInfo.result, function(i, row) {
         //console.log("DOS "+JSON.stringify(row.id));
         if (row.id === movieInfo.id || row.id === movieInfo.id2) { //barras bombones cremavellanas tortas
-            $('#movie-list').append('<li><a href="" data-id="' + row.a.id + '" data-cat="'+row.id+'"><img src="http://lalujuria.pe/'+row.a.img.src+'"/><h3>' + row.p + '</h3></a></li>');
+            $('#movie-list').append('<li><a href="" data-id="' + row.a.id + '" data-cat="'+row.id+'"><img src="http://lalujuria.pe/'+row.a.figure.img.src+'"/><h3>' + row.p + '</h3></a></li>');
             $('#cargando').hide();
         };
       });
